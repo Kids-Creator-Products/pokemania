@@ -15,11 +15,11 @@ components:
     type: Image
   - layout_properties: {grid_position: 'ZGAXDF,IKPJSG'}
     name: label_info
-    properties: {}
+    properties: {icon: 'fa:info'}
     type: Label
   - layout_properties: {grid_position: 'XPPGQO,ECPUWQ'}
     name: label_url
-    properties: {}
+    properties: {icon: ''}
     type: Label
   - layout_properties: {grid_position: 'WSLOMO,ILMAOX'}
     name: text_area_moves

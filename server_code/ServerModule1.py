@@ -1,19 +1,43 @@
 import anvil.server
 import requests
+
+def get_desc(url):
+  move_url=url
+  move_response = requests.get(move_url)
+  move_response.raise_for_status() # Raise an exception for bad status codes (4xx or 5xx)
+  move_data = move_response.json()
+
+  #.  2. Extract the 'flavor_text_entries'
+  flavor_text_entries = move_data.get("flavor_text_entries", [])
+
+  # 3. Iterate through the entries to find the English description
+  for entry in flavor_text_entries:
+    if entry["language"]["name"] == "en":
+      # Return the first English entry found
+      return entry["flavor_text"].replace('\n', ' ')
+
+  print(f"No English description found for move '{move_name}'.")
+  return None
+
 @anvil.server.callable
 def getpower(url):
   x=requests.get(url)
   if x.status_code==200:
     y=x.json()
-    return str(y.get('power','0'))
+    if True:
+      z=get_desc(url)
+      if not z:
+        z=''
+    return str(y.get('power','0'))+'-'+z
   else:
     return ''
+
+
 @anvil.server.callable
 def get_pokemon_details(name):
   # Full API endpoint URL for this specific Pokémon
   api_url = f"https://pokeapi.co/api/v2/pokemon/{name.lower()}"
   response = requests.get(api_url)
-
   if response.status_code == 200:
     data = response.json()
     return {
@@ -23,5 +47,5 @@ def get_pokemon_details(name):
       # Extract names from the 'moves' list
       'attacks': [m['move']['name'].replace('-', ' ').title()+'-'+getpower(m['move']['url']) for m in data['moves']],
       'types': [t['type']['name'] for t in data['types']]
-    }
+  }
   return None

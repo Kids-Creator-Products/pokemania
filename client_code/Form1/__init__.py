@@ -15,7 +15,7 @@ class Form1(Form1Template):
     self.text_area_moves.text = ""
     self.label_url.text = ""
 
-    pokemon_name = self.text_box_search.text
+    pokemon_name = self.text_box_search.text.lower().strip()
 
     # 2. Call the Server Module function
     # Ensure your Server Module has a function decorated with @anvil.server.callable

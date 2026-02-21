@@ -4,8 +4,7 @@ unique_ids:
     theme.css: 4OI5QMBG23QHPFTVSUOJTY3LOWKZO32U
   forms:
     Form1: KI3KW55ZFWI72TTRH2D2BSXIFM3Z2I67
-  modules:
-    Poke: '1771688395046117834462681.30049'
+  modules: {}
   scripts: {}
   server_modules:
     ServerModule1: '1771688387739281829335061.55237'
