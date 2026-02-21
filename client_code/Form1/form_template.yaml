@@ -17,9 +17,9 @@ components:
     name: label_info
     properties: {icon: 'fa:info'}
     type: Label
-  - layout_properties: {grid_position: 'XPPGQO,ECPUWQ'}
+  - layout_properties: {grid_position: 'XPPGQO,ECPUWQ', row_background: Blue}
     name: label_url
-    properties: {icon: ''}
+    properties: {foreground: White, icon: ''}
     type: Label
   - layout_properties: {grid_position: 'WSLOMO,ILMAOX'}
     name: text_area_moves
