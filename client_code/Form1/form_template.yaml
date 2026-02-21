@@ -1,8 +1,9 @@
 components:
 - components:
-  - layout_properties: {grid_position: 'KRQIYY,ZZDDMA'}
+  - data_bindings: []
+    layout_properties: {grid_position: 'KRQIYY,ZZDDMA'}
     name: text_box_search
-    properties: {placeholder: Enter Pokémon name…, role: outlined}
+    properties: {placeholder: Enter Pokémon name…, role: outlined, text: Pikachu}
     type: TextBox
   - event_bindings: {}
     layout_properties: {grid_position: 'BDMISC,UITEKD'}
@@ -17,7 +18,7 @@ components:
     name: label_info
     properties: {icon: 'fa:info'}
     type: Label
-  - layout_properties: {grid_position: 'XPPGQO,ECPUWQ', row_background: Blue}
+  - layout_properties: {grid_position: 'ZKRCFW,FBXKER'}
     name: label_url
     properties: {foreground: White, icon: ''}
     type: Label
