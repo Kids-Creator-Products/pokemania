@@ -1,9 +1,16 @@
-from ._anvil_designer import Form1Template
-from anvil import *
+def button_search_click(self, **event_args):
+  name = self.text_box_search.text
+  pokemon = anvil.server.call('get_pokemon_details', name)
 
-class Form1(Form1Template):
-  def __init__(self, **properties):
-    # Set Form properties and Data Bindings.
-    self.init_components(**properties)
+  if pokemon:
+    # Show the full API URL
+    self.label_url.text = pokemon['api_url']
 
-    # Any code you write here will run before the form opens.
+    # Display the sprite and name
+    self.image_pokemon.source = pokemon['image']
+    self.label_info.text = f"Name: {pokemon['name']}\nTypes: {', '.join(pokemon['types'])}"
+
+    # Display the full list of attacks (moves)
+    self.text_area_moves.text = "\n".join(pokemon['attacks'])
+  else:
+    self.label_info.text = "Error: Pokémon not found."
