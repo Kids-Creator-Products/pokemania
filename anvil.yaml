@@ -1,22 +1,54 @@
 allow_embedding: false
 db_schema:
-  files:
-    client: none
+  users:
+    client: full
     columns:
-    - admin_ui: {order: 0, width: 200}
+    - admin_ui: {width: 200}
       client_hidden: false
-      name: path
+      name: email
       type: string
-    - admin_ui: {order: 1, width: 200}
+    - admin_ui: {width: 200}
       client_hidden: false
-      name: file
-      type: media
-    - admin_ui: {order: 2, width: 200}
+      name: enabled
+      type: bool
+    - admin_ui: {width: 200}
       client_hidden: false
-      name: file_version
+      name: last_login
+      type: datetime
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: password_hash
+      type: string
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: n_password_failures
+      type: number
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: confirmed_email
+      type: bool
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: remembered_logins
+      type: simpleObject
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: signed_up
+      type: datetime
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: Cards
+      type: simpleObject
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: Potential
+      type: number
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: email_confirmation_key
       type: string
     server: full
-    title: Files
+    title: Users
 dependencies: []
 metadata: {title: Pokemania}
 name: Pokemania
@@ -31,7 +63,24 @@ services:
 - client_config: {}
   server_config: {}
   source: /runtime/services/tables.yml
+- client_config: {allow_remember_me: true, allow_signup: true, confirm_email: true, enable_automatically: true, remember_me_days: 365, require_secure_passwords: false, share_login_status: true, use_email: true, use_google: true, use_token: false}
+  server_config:
+    email_content:
+      confirm_address:
+        html: |-
+          <p>Thanks for registering your account with us. Please click the following link to confirm that this is your account:</p>
+          <p>{{confirm_link}}</p>
+          <p>Thanks,</p>
+          <p>The team</p>
+      reset_password:
+        html: |-
+          <p>Hi there,</p>
+          <p>You have requested a password reset for your account {{email}}. To reset your password, click the link below:</p>
+          <p>{{reset_link}}</p>
+          <p>This link will expire in ten minutes.</p>
+    user_table: users
+  source: /runtime/services/anvil/users.yml
 - client_config: {}
   server_config: {}
-  source: /runtime/services/stripe.yml
+  source: /runtime/services/google.yml
 startup_form: Form1

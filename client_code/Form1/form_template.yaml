@@ -1,6 +1,17 @@
 components:
 - components:
+  - components: []
+    layout_properties: {grid_position: 'EZJVEH,ZMNDWF'}
+    name: rich_text_1
+    properties: {format: plain_text}
+    type: RichText
+  - event_bindings: {}
+    layout_properties: {grid_position: 'KIGUJM,HPOWUV'}
+    name: button_1
+    properties: {text: Log in/Sign up}
+    type: Button
   - data_bindings: []
+    event_bindings: {}
     layout_properties: {grid_position: 'KRQIYY,ZZDDMA'}
     name: text_box_search
     properties: {placeholder: Enter Pokémon name…, role: outlined, text: Pikachu}
@@ -18,22 +29,27 @@ components:
     name: label_info
     properties: {icon: 'fa:info'}
     type: Label
-  - layout_properties: {grid_position: 'ZKRCFW,FBXKER'}
+  - layout_properties: {grid_position: 'HXWYRE,DCIIQX'}
     name: label_url
     properties: {foreground: White, icon: ''}
     type: Label
-  - layout_properties: {grid_position: 'WSLOMO,ILMAOX'}
+  - layout_properties: {grid_position: 'LCCFUZ,UFWCZA'}
     name: text_area_moves
     properties: {enabled: false, height: '300'}
     type: TextArea
   layout_properties: {slot: default}
   name: content_panel
-  properties: {col_widths: '{}'}
+  properties: {col_widths: '{}', visible: true}
   type: ColumnPanel
 - layout_properties: {slot: nav-right}
   name: navbar_links
   properties: {}
   type: FlowPanel
+- event_bindings: {}
+  layout_properties: {slot: title}
+  name: button_2
+  properties: {text: Add this card}
+  type: Button
 container:
   properties: {html: '@theme:standard-page.html'}
   type: HtmlTemplate

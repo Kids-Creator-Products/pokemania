@@ -1,6 +1,8 @@
 from ._anvil_designer import Form1Template
 from anvil import *
-import stripe.checkout
+import anvil.google.auth, anvil.google.drive
+from anvil.google.drive import app_files
+import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
@@ -10,6 +12,8 @@ class Form1(Form1Template):
   def __init__(self, **properties):
     # Set up the form and its initial state
     self.init_components(**properties)
+    self.update()
+    self.text_box_search.text=anvil.server.startup_data.get("pokemon")
   @handle('button_search','click')
   def button_search_click(self, **event_args):
     """This method is called when the search button is clicked"""
@@ -42,3 +46,34 @@ class Form1(Form1Template):
       # Handle cases where the Pokémon is not found
       self.label_info.text = f"Error: '{pokemon_name}' not found in the PokéAPI."
       self.label_url.text = ""
+
+  @handle("text_box_search", "pressed_enter")
+  def text_box_search_pressed_enter(self, **event_args):
+    """This method is called when the user presses Enter in this text box"""
+    pass
+
+  @handle("button_1", "click")
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    anvil.users.login_with_form(allow_cancel=True)
+    try:
+      anvil.users.get_user()['Cards']=[]
+      anvil.users.get_user()['Potential']=0
+    except:
+      pass
+  def update(self):
+    self.rich_text_1.content=anvil.users.get_user()['Potential']
+    y=anvil.users.get_user()['Potential']
+    y=y-y%0.1
+    anvil.users.get_user()['Potential']=y
+  @handle("button_2", "click")
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    if anvil.users.get_user()['Potential']%1==0:
+      x=anvil.users.get_user()['Cards']
+      x.append(self.text_box_search.text)
+      anvil.users.get_user()['Cards']=x
+      anvil.users.get_user()['Potential']=0.1
+    anvil.users.get_user()['Potential']+=0.1
+    self.update()
+    

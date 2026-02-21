@@ -1,4 +1,6 @@
-import anvil.stripe
+import anvil.google.auth, anvil.google.drive, anvil.google.mail
+from anvil.google.drive import app_files
+import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
@@ -51,5 +53,12 @@ def get_pokemon_details(name):
       # Extract names from the 'moves' list
       'attacks': [m['move']['name'].replace('-', ' ').title()+'-'+getpower(m['move']['url']) for m in data['moves']],
       'types': [t['type']['name'] for t in data['types']]
-  }
+    }
   return None
+
+@anvil.server.route('/pokemon/:name')
+def pokemon(name):
+  return anvil.server.AppResponder(data={'pokemon':name}).load_form('Form1')
+@anvil.server.route("/cards")
+def cards():
+  return anvil.server.FormResponse('Cards')
