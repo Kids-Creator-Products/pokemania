@@ -48,7 +48,7 @@ components:
 - event_bindings: {}
   layout_properties: {slot: title}
   name: button_2
-  properties: {text: Add this card}
+  properties: {bold: true, font: Monospaced, icon: 'fa:plus', icon_align: left, italic: false, text: Add this card, tooltip: Add this card to your account deck, underline: true}
   type: Button
 container:
   properties: {html: '@theme:standard-page.html'}

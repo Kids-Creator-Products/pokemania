@@ -46,13 +46,19 @@ def get_pokemon_details(name):
   response = requests.get(api_url)
   if response.status_code == 200:
     data = response.json()
+    for stat_entry in data['stats']:
+      if stat_entry['stat']['name'] == 'hp':
+        base_hp = stat_entry['base_stat']
+        #print(f"The base HP for {name.capitalize()} is: {base_hp}")
+        hp=base_hp
     return {
       'api_url': api_url,
       'name': data['name'].capitalize(),
       'image': data['sprites']['front_default'],
       # Extract names from the 'moves' list
       'attacks': [m['move']['name'].replace('-', ' ').title()+'-'+getpower(m['move']['url']) for m in data['moves']],
-      'types': [t['type']['name'] for t in data['types']]
+      'types': [t['type']['name'] for t in data['types']],
+      'health':hp
     }
   return None
 
