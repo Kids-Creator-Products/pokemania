@@ -23,4 +23,4 @@ class Card(CardTemplate):
     # Any code you write here will run before the form opens.
     self.heading_1.text=self.x['name']+'      '+str(self.x['health'])+' HP, types:'+','.join(self.x['types'])
     self.image_1.source=self.x["image"]
-    self.rich_text_1.content="<br/>".join([i.capitalize() for i in self.x['attacks']])
+    self.rich_text_1.content="<br/>".join([i.title() for i in self.x['attacks']])
