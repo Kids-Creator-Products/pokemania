@@ -49,7 +49,10 @@ db_schema:
       type: string
     server: full
     title: Users
-dependencies: []
+dependencies:
+- dep_id: dep_977rullq9y7uhy
+  resolution_hints: {app_id: VT2OSSSMWKNTSG44, name: Data terminal, package_name: Data_terminal}
+  version: {branch: master}
 metadata: {title: Pokemania}
 name: Pokemania
 package_name: Pokemania
@@ -61,7 +64,7 @@ runtime_options:
   version: 3
 services:
 - client_config: {}
-  server_config: {}
+  server_config: {auto_create_missing_columns: true}
   source: /runtime/services/tables.yml
 - client_config: {allow_remember_me: true, allow_signup: true, confirm_email: true, enable_automatically: true, remember_me_days: 365, require_secure_passwords: false, share_login_status: true, use_email: true, use_google: true, use_token: false}
   server_config:

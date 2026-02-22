@@ -35,7 +35,7 @@ components:
     type: Label
   - layout_properties: {grid_position: 'LCCFUZ,UFWCZA'}
     name: text_area_moves
-    properties: {enabled: false, height: '300'}
+    properties: {enabled: false, height: '1200'}
     type: TextArea
   layout_properties: {slot: default}
   name: content_panel
