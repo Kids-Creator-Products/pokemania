@@ -50,6 +50,10 @@ components:
   name: button_2
   properties: {bold: true, font: Monospaced, icon: 'fa:plus', icon_align: left, italic: false, text: Add this card, tooltip: Add this card to your account deck, underline: true}
   type: Button
+- layout_properties: {slot: left-nav}
+  name: link_1
+  properties: {icon: '', text: Cards, text_color: Cyan, url: 'https://critical-adolescent-stop.anvil.app/cards'}
+  type: form:dep_lin1x4oec0ytd:_Components.Link
 container:
   properties: {html: '@theme:standard-page.html'}
   type: HtmlTemplate

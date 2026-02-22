@@ -50,9 +50,9 @@ db_schema:
     server: full
     title: Users
 dependencies:
-- dep_id: dep_977rullq9y7uhy
-  resolution_hints: {app_id: VT2OSSSMWKNTSG44, name: Data terminal, package_name: Data_terminal}
-  version: {branch: master}
+- dep_id: dep_72ntb5nseaszb
+  resolution_hints: {app_id: 4UK6WHQ6UX7AKELK, name: Material 3 Theme, package_name: m3}
+  version: {version_tag: v1.2.6}
 metadata: {title: Pokemania}
 name: Pokemania
 package_name: Pokemania
@@ -86,4 +86,5 @@ services:
 - client_config: {}
   server_config: {}
   source: /runtime/services/google.yml
-startup_form: Form1
+startup: {module: Form1, type: form}
+startup_form: null
