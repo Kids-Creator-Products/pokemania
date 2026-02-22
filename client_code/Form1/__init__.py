@@ -70,10 +70,10 @@ class Form1(Form1Template):
   @handle("button_2", "click")
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
-    anvil.users.get_user()['Potential']+=1
+    anvil.users.get_user()['Potential']+=0.1
     if anvil.users.get_user()['Potential']%1==0:
       x=anvil.users.get_user()['Cards']
-      x.append(self.text_box_search.text)
+      x.append(self.text_box_search.text.lower().strip())
       anvil.users.get_user()['Cards']=x
       anvil.users.get_user()['Potential']=0.1
       anvil.alert('Card has been added.')
