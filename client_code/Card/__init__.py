@@ -14,8 +14,8 @@ class Card(CardTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    if self.item!={}:
-      self.data=self.item
+    if 'name' in properties:
+      self.data=properties
     else:
       self.data=anvil.server.startup_data
     self.n=self.data['name']

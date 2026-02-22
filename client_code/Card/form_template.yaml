@@ -23,4 +23,8 @@ components:
 container:
   properties: {html: '@theme:standard-page.html'}
   type: HtmlTemplate
+custom_component: true
+custom_component_container: false
 is_package: true
+properties:
+- {default_binding_prop: true, default_value: pikachu, group: Main, important: true, name: name, type: string}

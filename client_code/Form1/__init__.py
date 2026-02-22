@@ -47,7 +47,6 @@ class Form1(Form1Template):
       # Handle cases where the Pokémon is not found
       self.label_info.text = f"Error: '{pokemon_name}' not found in the PokéAPI."
       self.label_url.text = ""
-
   @handle("text_box_search", "pressed_enter")
   def text_box_search_pressed_enter(self, **event_args):
     """This method is called when the user presses Enter in this text box"""
@@ -71,7 +70,7 @@ class Form1(Form1Template):
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.users.get_user()['Potential']+=0.1
-    if anvil.users.get_user()['Potential']%1==0:
+    if True:
       x=anvil.users.get_user()['Cards']
       x.append(self.text_box_search.text.lower().strip())
       anvil.users.get_user()['Cards']=x
