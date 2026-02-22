@@ -69,3 +69,7 @@ def pokemon(name):
 @anvil.server.route("/cards")
 def cards():
   return anvil.server.FormResponse('Cards')
+
+@anvil.server.route('/card/:n')
+def card(n):
+  return anvil.server.AppResponder(data={'name':n}).load_form('Card')
