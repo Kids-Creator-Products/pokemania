@@ -52,8 +52,8 @@ components:
   type: Button
 - layout_properties: {slot: left-nav}
   name: link_1
-  properties: {icon: '', text: Cards, text_color: Cyan, url: 'https://critical-adolescent-stop.anvil.app/cards'}
-  type: form:dep_lin1x4oec0ytd:_Components.Link
+  properties: {icon: 'mi:cards', text: Cards, url: 'https://critical-adolescent-stop.anvil.app/cards'}
+  type: form:dep_72ntb5nseaszb:_Components.Link
 container:
   properties: {html: '@theme:standard-page.html'}
   type: HtmlTemplate
