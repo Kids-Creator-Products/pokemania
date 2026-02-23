@@ -9,6 +9,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 from .... import PackData
+from datetime import datetime
 
 class ItemTemplate1(ItemTemplate1Template):
   def __init__(self, **properties):
@@ -23,6 +24,7 @@ class ItemTemplate1(ItemTemplate1Template):
     if PackData.canclaim():
       anvil.server.call('addPack',self.item['data'])
       alert('Pack claimed')
+      anvil.users.get_user()['last_claim']=datetime.now()
     else:
       alert('Could not claim.')
 

@@ -5,7 +5,7 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
-import datetime
+from datetime import datetime
 # This is a module.
 # You can define variables and functions here, and use them from any form. For example, in a top-level form:
 #
@@ -22,13 +22,16 @@ packs={
 }
 
 def getlastclaim():
-  return anvil.users.get_user()['last_claim']
+  if anvil.users.get_user()['last_claim']:
+    return anvil.users.get_user()['last_claim']
+  else:
+    anvil.users.get_user()['last_claim']=datetime.now()
+    return datetime.now()
 def canclaim():
-  try:
-    x=getlastclaim().hour 
-    return datetime.now().hour!=x
-  except:
-    return True
+  if True:
+    now=datetime.now()
+    provided_date=getlastclaim()
+    return provided_date.strftime("%Y-%m-%d %H") != now.strftime("%Y-%m-%d %H")
 def getpacknames():
   x=[]
   for k in packs:
