@@ -62,6 +62,14 @@ def get_pokemon_details(name):
     }
   return None
 
+@anvil.server.callable
+def addCard(rn):
+  n=rn.lower().strip()
+  x=anvil.users.get_user()['Cards']
+  x.append(n)
+  anvil.users.get_user()['Cards']=x
+  
+
 @anvil.server.route('/pokemon/:name')
 def pokemon(name):
   return anvil.server.AppResponder(data={'pokemon':name}).load_form('Form1')
