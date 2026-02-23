@@ -8,7 +8,7 @@ components:
 - event_bindings: {}
   layout_properties: {grid_position: 'AFNEQY,ONWYTL'}
   name: button_1
-  properties: {icon: 'mi:hand_gesture', text: Claim pack!}
+  properties: {icon: 'mi:stacks', text: Claim pack!}
   type: form:dep_72ntb5nseaszb:_Components.Button
 container: {type: ColumnPanel}
 is_package: true

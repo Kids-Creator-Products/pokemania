@@ -15,7 +15,7 @@ class ItemTemplate1(ItemTemplate1Template):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.heading_1.icon='fa:shield-dog'
+    self.heading_1.icon='fa:box'
     self.icon=CheckBox(text='See contained cards',checked=False)
     self.text=Label(text='\n'.join(self.item['data']),visible=False,icon='fas:dragon')
     self.add_component(self.icon)
