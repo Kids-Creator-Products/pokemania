@@ -8,6 +8,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
+from .. import PackData
 
 class Form1(Form1Template):
   def __init__(self, **properties):
@@ -73,12 +74,14 @@ class Form1(Form1Template):
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.users.get_user()['Potential']+=0.1
-    if True:
+    if PackData.canclaim():
       x=anvil.users.get_user()['Cards']
       x.append(self.text_box_search.text.lower().strip())
       anvil.users.get_user()['Cards']=x
       anvil.users.get_user()['Potential']=0.1
       anvil.alert('Card has been added.')
+    else:
+      anvil.alert('You already got a card this hour...')
     #anvil.users.get_user()['Potential']+=0.1
     self.update()
     

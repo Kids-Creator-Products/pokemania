@@ -18,7 +18,8 @@ packs={
   'fire':['charmander','charmeleon','charizard','moltres','arcanine','growlithe','entei','blaziken','ponyta','infernape','vulpix','magmar','flareon'],
   'basic':['pikachu','squirtle','charmander','ivysaur','eevee','clefairy'],
   'halloween':['murkrow','marshadow','pumpkaboo'],
-  'eevee evolves':['eevee','sylveon','flareon','glaceon','vaporeon','jolteon','espeon','umbreon','leafeon']
+  'eevee evolves':['eevee','sylveon','flareon','glaceon','vaporeon','jolteon','espeon','umbreon','leafeon'],
+  'electricute':['pikachu','pichu','raichu','lenler','zolteon','zapdos','helioptile','heliolisk','dedenne','pawmot','boltund',"morpeko",'minun','plusle']
 }
 
 def getlastclaim():
