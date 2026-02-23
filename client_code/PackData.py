@@ -21,7 +21,8 @@ packs={
   'eevee evolves':['eevee','sylveon','flareon','glaceon','vaporeon','jolteon','espeon','umbreon','leafeon'],
   'electricute':['pikachu','pichu','raichu','lenler','zolteon','zapdos','helioptile','heliolisk','dedenne','pawmot','boltund',"morpeko",'minun','plusle'],
   'grassy wonders':['golem',"sandshrew",'venusaur','bulbasaur','ivysaur','exeggutor','exeggcute','victreebel','breloom','roserade','celebi','sceptile','leafeon','ogerpon'],
-  'water':['squirtle','wartortle','blastoise','psyduck','cloyster','gyrados','vaporeon','suicune']
+  'water':['squirtle','wartortle','blastoise','psyduck','cloyster','gyrados','vaporeon','suicune','kingdra','palkia'],
+  'mighty dragons':['rayquaza',"dragonite",'garchomp','altaria','flygon','dragonair']
 }
 
 def getlastclaim():

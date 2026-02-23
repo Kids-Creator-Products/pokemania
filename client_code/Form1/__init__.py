@@ -61,8 +61,9 @@ class Form1(Form1Template):
     """This method is called when the button is clicked"""
     anvil.users.login_with_form(allow_cancel=True)
     try:
-      anvil.users.get_user()['Cards']=[]
-      anvil.users.get_user()['Potential']=0
+      if not anvil.users.get_user()['Cards']:
+        anvil.users.get_user()['Cards']=[]
+        anvil.users.get_user()['Potential']=0
     except:
       pass
   def update(self):
