@@ -47,6 +47,10 @@ db_schema:
       client_hidden: false
       name: email_confirmation_key
       type: string
+    - admin_ui: {order: 11, width: 200}
+      client_hidden: false
+      name: last_claim
+      type: date
     server: full
     title: Users
 dependencies:

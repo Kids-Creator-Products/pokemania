@@ -6,6 +6,8 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
 import requests
+import random
+import datetime
 
 def get_desc(url):
   move_url=url
@@ -68,7 +70,14 @@ def addCard(rn):
   x=anvil.users.get_user()['Cards']
   x.append(n)
   anvil.users.get_user()['Cards']=x
-  
+#l is list of available cards, a is amount of cards.
+
+@anvil.server.callable
+def addPack(li,a=2):
+  for i in range(a):
+    x=random.choice(li)
+    addCard(x)
+    li.remove(x)
 
 @anvil.server.route('/pokemon/:name')
 def pokemon(name):

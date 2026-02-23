@@ -2,39 +2,43 @@ components:
 - components:
   - components:
     - components: []
-      layout_properties: {grid_position: 'EZJVEH,ZMNDWF'}
+      layout_properties: {grid_position: 'AJNVKQ,LJEJIL EZJVEH,ZMNDWF'}
       name: rich_text_1
       properties: {format: plain_text, visible: false}
       type: RichText
     - event_bindings: {}
-      layout_properties: {grid_position: 'KIGUJM,HPOWUV'}
+      layout_properties: {grid_position: 'AJNVKQ,LJEJIL KIGUJM,HPOWUV'}
       name: button_1
       properties: {text: Log in/Sign up}
       type: Button
     - data_bindings: []
       event_bindings: {}
-      layout_properties: {grid_position: 'KRQIYY,ZZDDMA'}
+      layout_properties: {grid_position: 'AJNVKQ,LJEJIL KRQIYY,ZZDDMA'}
       name: text_box_search
       properties: {placeholder: Enter Pokémon name…, role: outlined, text: Pikachu}
       type: TextBox
     - event_bindings: {}
-      layout_properties: {grid_position: 'BDMISC,UITEKD'}
+      layout_properties: {grid_position: 'AJNVKQ,LJEJIL BDMISC,UITEKD'}
       name: button_search
       properties: {background: Black, foreground: White, text: Search}
       type: Button
-    - layout_properties: {grid_position: 'URHOOY,CZLFMA'}
+    - layout_properties: {grid_position: 'AJNVKQ,LJEJIL URHOOY,CZLFMA'}
       name: image_pokemon
       properties: {}
       type: Image
-    - layout_properties: {grid_position: 'ZGAXDF,IKPJSG'}
+    - layout_properties: {grid_position: 'AJNVKQ,LJEJIL ZGAXDF,IKPJSG'}
       name: label_info
       properties: {icon: 'fa:info'}
       type: Label
-    - layout_properties: {grid_position: 'HXWYRE,DCIIQX'}
+    - layout_properties: {grid_position: 'AJNVKQ,LJEJIL HXWYRE,DCIIQX'}
       name: label_url
       properties: {foreground: White, icon: ''}
       type: Label
-    - layout_properties: {grid_position: 'LCCFUZ,UFWCZA'}
+    - layout_properties: {grid_position: 'AJNVKQ,ZYMMXG'}
+      name: navigation_link_1
+      properties: {badge: false, icon: 'mi:cards', navigate_to: Cards, text: Cards}
+      type: form:dep_72ntb5nseaszb:_Components.NavigationLink
+    - layout_properties: {grid_position: 'AJNVKQ,LJEJIL LCCFUZ,UFWCZA'}
       name: text_area_moves
       properties: {enabled: false, height: '1200'}
       type: TextArea

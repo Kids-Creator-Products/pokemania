@@ -17,6 +17,10 @@ components:
   name: navbar_links
   properties: {}
   type: FlowPanel
+- layout_properties: {slot: left-nav}
+  name: navigation_link_1
+  properties: {badge: false, badge_count: 1, icon: 'mi:package_2', navigate_to: Cards.Packs, selected: false, text: Packs}
+  type: form:dep_72ntb5nseaszb:_Components.NavigationLink
 container:
   properties: {html: '@theme:standard-page.html'}
   type: HtmlTemplate
