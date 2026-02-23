@@ -59,6 +59,7 @@ dependencies:
   version: {version_tag: v1.2.6}
 metadata: {title: Pokemania}
 name: Pokemania
+native_deps: {head_html: '<script src="https://kit.fontawesome.com/86617f041f.js" crossorigin="anonymous"></script>'}
 package_name: Pokemania
 renamed: true
 runtime_options:

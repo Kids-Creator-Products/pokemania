@@ -16,7 +16,7 @@ class ItemTemplate1(ItemTemplate1Template):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.icon=CheckBox(text='See contained cards',checked=False)
-    self.text=Label(text='\n'.join(self.item['data']),visible=False,icon='fa:paw')
+    self.text=Label(text='\n'.join(self.item['data']),visible=False,icon='fas:dragon')
     self.add_component(self.icon)
     self.add_component(self.text)
     self.icon.add_event_handler("change",self.change)
