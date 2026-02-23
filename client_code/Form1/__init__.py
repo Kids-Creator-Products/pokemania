@@ -14,7 +14,10 @@ class Form1(Form1Template):
     # Set up the form and its initial state
     self.init_components(**properties)
     self.update()
-    self.text_box_search.text=anvil.server.startup_data.get("pokemon")
+    try:
+      self.text_box_search.text=anvil.server.startup_data.get("pokemon")
+    except:
+      pass
   @handle('button_search','click')
   def button_search_click(self, **event_args):
     """This method is called when the search button is clicked"""

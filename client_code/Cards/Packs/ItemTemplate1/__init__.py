@@ -21,10 +21,16 @@ class ItemTemplate1(ItemTemplate1Template):
   @handle("button_1", "click")
   def button_1_click(self, **event_args):
     """This method is called when the component is clicked."""
+    buttonx=[
+      ('More Info','info'),
+      ('OK','cancel')
+    ]
     if PackData.canclaim():
       anvil.server.call('addPack',self.item['data'])
-      alert('Pack claimed')
+      x=alert('Pack claimed',buttons=buttonx)
       anvil.users.get_user()['last_claim']=datetime.now()
     else:
-      alert('Could not claim.')
+      x=alert('Could not claim.',buttons=buttonx)
+    if x=='info':
+      alert('You can only open a pack every hour, each pack is usually two cards.',buttons=[('OK','cancel')])
 
