@@ -17,9 +17,11 @@ from datetime import datetime
 packs={
   'fire':['charmander','charmeleon','charizard','moltres','arcanine','growlithe','entei','blaziken','ponyta','infernape','vulpix','magmar','flareon'],
   'basic':['pikachu','squirtle','charmander','ivysaur','eevee','clefairy'],
-  'halloween':['murkrow','marshadow','pumpkaboo'],
+  'halloween':['murkrow','marshadow','pumpkaboo',"gengar",'banette','houndstone','dusknoir','chandelure','haunter','litwick','honchkrow','mismagius','noibat','noivern','ursaluna','ursaring'],
   'eevee evolves':['eevee','sylveon','flareon','glaceon','vaporeon','jolteon','espeon','umbreon','leafeon'],
-  'electricute':['pikachu','pichu','raichu','lenler','zolteon','zapdos','helioptile','heliolisk','dedenne','pawmot','boltund',"morpeko",'minun','plusle']
+  'electricute':['pikachu','pichu','raichu','lenler','zolteon','zapdos','helioptile','heliolisk','dedenne','pawmot','boltund',"morpeko",'minun','plusle'],
+  'grassy wonders':['golem',"sandshrew",'venusaur','bulbasaur','ivysaur','exeggutor','exeggcute','victreebel','breloom','roserade','celebi','sceptile','leafeon','ogerpon'],
+  'water':['squirtle','wartortle','blastoise','psyduck','cloyster','gyrados','vaporeon','suicune']
 }
 
 def getlastclaim():

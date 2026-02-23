@@ -23,7 +23,8 @@ class ItemTemplate1(ItemTemplate1Template):
     """This method is called when the component is clicked."""
     buttonx=[
       ('More Info','info'),
-      ('OK','cancel')
+      ('OK','cancel'),
+      ('View cards','redirect')
     ]
     if PackData.canclaim():
       anvil.server.call('addPack',self.item['data'])
@@ -33,4 +34,7 @@ class ItemTemplate1(ItemTemplate1Template):
       x=alert('Could not claim.',buttons=buttonx)
     if x=='info':
       alert('You can only open a pack every hour, each pack is usually two cards.',buttons=[('OK','cancel')])
+    if x=='redirect':
+      y=anvil.server.get_app_origin('published')+'/cards'
+      self.add_component(Link(text='View Cards',url=y))
 
