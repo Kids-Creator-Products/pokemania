@@ -3,7 +3,7 @@ components:
   - {code: 'self.item[''name''].title()', property: text, writeback: false}
   layout_properties: {grid_position: 'JUNNDE,UTJTPI'}
   name: heading_1
-  properties: {}
+  properties: {icon: 'mi:pets'}
   type: form:dep_72ntb5nseaszb:_Components.Heading
 - event_bindings: {}
   layout_properties: {grid_position: 'AFNEQY,ONWYTL'}
