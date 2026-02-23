@@ -7,12 +7,6 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 from datetime import datetime
 # This is a module.
-# You can define variables and functions here, and use them from any form. For example, in a top-level form:
-#
-#    from .. import Module1
-#
-#    Module1.say_hello()
-#
 
 packs={
   'fire':['charmander','charmeleon','charizard','moltres','arcanine','growlithe','entei','blaziken','ponyta','infernape','vulpix','magmar','flareon'],
@@ -21,8 +15,8 @@ packs={
   'eevee evolves':['eevee','sylveon','flareon','glaceon','vaporeon','jolteon','espeon','umbreon','leafeon'],
   'electricute':['pikachu','pichu','raichu','lenler','zolteon','zapdos','helioptile','heliolisk','dedenne','pawmot','boltund',"morpeko",'minun','plusle'],
   'grassy wonders':['golem',"sandshrew",'venusaur','bulbasaur','ivysaur','exeggutor','exeggcute','victreebel','breloom','roserade','celebi','sceptile','leafeon','ogerpon',"magikarp"],
-  'water':['squirtle','wartortle','blastoise','psyduck','cloyster','gyrados','vaporeon','suicune','kingdra','palkia'],
-  'mighty dragons':['rayquaza',"dragonite",'garchomp','altaria','flygon','dragonair']
+  'water':['squirtle','wartortle','blastoise','psyduck','cloyster','gyrados','vaporeon','suicune','kingdra','palkia','lapras','greninja'],
+  'mighty dragons':['rayquaza',"dragonite",'garchomp','altaria','flygon','dragonair','charizard']
 }
 
 def getlastclaim():

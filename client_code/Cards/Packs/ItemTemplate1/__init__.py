@@ -15,9 +15,14 @@ class ItemTemplate1(ItemTemplate1Template):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-   
+    self.icon=CheckBox(text='See contained cards',checked=False)
+    self.text=Label(text='\n'.join(self.item['data']),visible=False,icon='mi:pets')
+    self.add_component(self.icon)
+    self.add_component(self.text)
+    self.icon.add_event_handler("change",self.change)
     # Any code you write here will run before the form opens.
-
+  def change(self, **event_args):
+    self.text.visible=self.icon.checked
   @handle("button_1", "click")
   def button_1_click(self, **event_args):
     """This method is called when the component is clicked."""

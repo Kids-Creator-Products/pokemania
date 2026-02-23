@@ -12,6 +12,11 @@ components:
   name: navbar_links
   properties: {}
   type: FlowPanel
+- event_bindings: {}
+  layout_properties: {slot: title}
+  name: timer_1
+  properties: {}
+  type: Timer
 container:
   properties: {html: '@theme:standard-page.html'}
   type: HtmlTemplate
