@@ -14,12 +14,12 @@ import random
 class Battle(BattleTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
-    self.hp=[0,0]
+    self.hp=[500,500]
     self.init_components(**properties)
     self.data=anvil.server.startup_data
     if self.data['battle'].lower().strip() in anvil.users.get_user()['Cards']:
       self.playerdata=anvil.server.call('get_pokemon_details',self.data['battle'])
-    self.enemydata=anvil.server.call('get_pokemon_data',self.data['bad'])
+    self.enemydata=anvil.server.call('get_pokemon_details',self.data['bad'])
     self.ismyturn=random.choice([False,True])
     self.e=[0,0]
     self.hp=[self.playerdata['health'],self.enemydata['health']]
@@ -33,7 +33,8 @@ class Battle(BattleTemplate):
     """This method is called Every [interval] seconds. Does not trigger if [interval] is 0."""
     if not self.ismyturn:
       self.e[1]+=1
-      x=[int(self.getdata(atk).get(1,0)) for atk in self.enemydata['attacks']]
+      a=[i for i in self.enemydata['attacks'] if i is not None]
+      x=[int(self.getdata(atk)[1]) for atk in a if self.getdata()
       y=[i for i in x if self.getenergies(i)<=self.e[1]]
       try:
         self.hp[0]-=max(y)
@@ -41,7 +42,7 @@ class Battle(BattleTemplate):
         pass
       self.icon_button_1.enabled=True
       self.ismyturn=True
-    if self.hp[0]<1 or self.hp[1]>1:
+    if self.hp[0]<1 or self.hp[1]<1:
       self.clear()
     self.dropdown_menu_1.items=self.playerdata['attacks']
     self.refresh_data_bindings()
@@ -56,7 +57,7 @@ class Battle(BattleTemplate):
     """This method is called when an item is selected"""
     if self.ismyturn:
       x=self.dropdown_menu_1.selected_value
-      y=int(self.getdata(x)[0])
+      y=int(self.getdata(x)[1])
       if self.getenergies(y)<=self.e[0]:
         self.hp[1]-=y
         self.ismyturn=False
