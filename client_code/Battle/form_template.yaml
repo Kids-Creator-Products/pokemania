@@ -38,7 +38,7 @@ components:
 - event_bindings: {}
   layout_properties: {slot: title}
   name: timer_1
-  properties: {}
+  properties: {interval: 0.1}
   type: Timer
 container:
   properties: {html: '@theme:standard-page.html'}

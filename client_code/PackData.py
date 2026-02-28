@@ -17,7 +17,7 @@ packs={
   'grassy wonders':['golem',"sandshrew",'venusaur','bulbasaur','ivysaur','exeggutor','exeggcute','victreebel','breloom','roserade','celebi','sceptile','leafeon','ogerpon',"magikarp"],
   'water':['squirtle','wartortle','blastoise','psyduck','cloyster','gyrados','vaporeon','suicune','kingdra','palkia','lapras','greninja'],
   'mighty dragons':['rayquaza',"dragonite",'garchomp','altaria','flygon','dragonair','charizard'],
-  'magical':['sylveon','murkrow','marshadow','mew','mewtwo','malamar','umbreon','espeon','natu','xatu','honchkrow','houndour','houndoom']
+  'magical':['sylveon','murkrow','marshadow','mew','mewtwo','malamar','umbreon','espeon','natu','xatu','honchkrow','houndour','houndoom','hypno','drowzee']
 }
 
 def getlastclaim():
