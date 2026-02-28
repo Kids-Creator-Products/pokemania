@@ -17,7 +17,7 @@ class Battle(BattleTemplate):
     self.hp=[500,500]
     self.init_components(**properties)
     self.data=anvil.server.startup_data
-    if self.data['battle'].lower().strip() in anvil.users.get_user()['Cards']:
+    if self.data['battle'].lower().strip() in anvil.users.get_user()['Cards'] or True:
       self.playerdata=anvil.server.call('get_pokemon_details',self.data['battle'])
     self.enemydata=anvil.server.call('get_pokemon_details',self.data['bad'])
     self.ismyturn=random.choice([False,True])
@@ -34,7 +34,11 @@ class Battle(BattleTemplate):
     if not self.ismyturn:
       self.e[1]+=1
       a=[i for i in self.enemydata['attacks'] if i is not None]
-      x=[int(self.getdata(atk)[1]) for atk in a if self.getdata()
+      try:  
+        x=[int(self.getdata(atk)[1]) for atk in a if self.getdata()[1] not in ['None',None]]
+      except:
+        x=[]
+      
       y=[i for i in x if self.getenergies(i)<=self.e[1]]
       try:
         self.hp[0]-=max(y)
@@ -44,6 +48,14 @@ class Battle(BattleTemplate):
       self.ismyturn=True
     if self.hp[0]<1 or self.hp[1]<1:
       self.clear()
+      if self.hp[0]<1:
+        t="DEFEAT!"
+      else:
+        t="VICTORY!"
+      print(t)
+      t="**"+t+"**"
+      x=RichText(content=t,format='markdown')
+      self.add_component(x)
     self.dropdown_menu_1.items=self.playerdata['attacks']
     self.refresh_data_bindings()
 

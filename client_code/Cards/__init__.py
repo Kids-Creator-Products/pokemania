@@ -33,3 +33,16 @@ class Cards(CardsTemplate):
     y=anvil.server.get_app_origin('published')+'/pokemon/'+x
     z=Link(url=y,text='Open me to enter!')
     self.content_panel.add_component(z)
+
+  @handle("text_box_1", "pressed_enter")
+  def text_box_1_pressed_enter(self, **event_args):
+    """This method is called when the user presses enter in this component."""
+    pass
+
+  @handle("icon_button_1", "click")
+  def icon_button_1_click(self, **event_args):
+    c1=self.drop_down_1.selected_value.split('-')[0]
+    c2=self.text_box_1.text
+    uri=anvil.server.get_app_origin('published')+'/battle/'+c1+'/'+c2
+    x=Link(url=uri,text='Battle!')
+    self.add_component(x)
