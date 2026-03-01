@@ -51,7 +51,7 @@ class Battle(BattleTemplate):
         self.hp[0]-=max(y)
       except:
         pass
-      self.sound()
+      #self.sound()
       self.icon_button_1.enabled=True
       self.ismyturn=True
     if self.hp[0]<1 or self.hp[1]<1:
