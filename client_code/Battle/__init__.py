@@ -34,7 +34,7 @@ class Battle(BattleTemplate):
   @handle("timer_1", "tick")
   def timer_1_tick(self, **event_args):
     """This method is called Every [interval] seconds. Does not trigger if [interval] is 0."""
-    if not self.ismyturn:
+    if not self.ismyturn and self.hp[0]>0 and self.hp[1]>0:
       self.e[1]+=1
       a=[i for i in self.enemydata['attacks'] if i is not None]
       try:  
