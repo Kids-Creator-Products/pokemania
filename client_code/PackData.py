@@ -20,7 +20,7 @@ packs={
   'magical':['sylveon','murkrow','marshadow','mew','mewtwo','malamar','umbreon','espeon','natu','xatu','honchkrow','houndour','houndoom','hypno','drowzee',"rapidash",'meowth',"purrloin",'slowpoke','baltoy'],
   'icy wonderland':['snorunt','glaceon','cloyster','lapras','dewgong','beartic','snom','spheal','abomasnow','sealeo','kyogre'],
   'whales':['dewgong','kyogre','wailord','wailmer','cetitan'],
-  'dolphins':['kyogre','olymphica','palafin','doflap','finizen']
+  'dolphins':['kyogre','olymphica','palafin','doflap','dewgong']
 }
 
 def getlastclaim():
