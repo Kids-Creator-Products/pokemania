@@ -1,64 +1,28 @@
 components:
+- event_bindings: {}
+  layout_properties: {slot: title}
+  name: button_2
+  properties: {bold: true, font: Monospaced, icon: 'fa:plus', icon_align: left, italic: false, text: Claim card, tooltip: Add this card to your account deck, underline: true}
+  type: Button
+- components:
+  - layout_properties: {slot: anvil-m3-link-slot}
+    name: navigation_link_1
+    properties: {badge: false, icon: 'mi:cards', navigate_to: Cards, text: Cards}
+    type: form:dep_72ntb5nseaszb:_Components.NavigationLink
+  layout_properties: {slot: left-nav}
+  name: link_1
+  properties: {icon: 'mi:cards', text: Cards, url: 'https://critical-adolescent-stop.anvil.app/cards'}
+  type: form:dep_72ntb5nseaszb:_Components.Link
 - components:
   - components: []
     layout_properties: {}
     name: rich_text_1
     properties: {format: plain_text, visible: false}
     type: RichText
-  - layout_properties: {}
-    name: navigation_link_1
-    properties: {badge: false, icon: 'mi:cards', navigate_to: Cards, text: Cards}
-    type: form:dep_72ntb5nseaszb:_Components.NavigationLink
-  - components:
-    - event_bindings: {}
-      layout_properties: {grid_position: 'KIGUJM,HPOWUV'}
-      name: button_1
-      properties: {text: Log in/Sign up}
-      type: Button
-    - data_bindings: []
-      event_bindings: {}
-      layout_properties: {grid_position: 'KRQIYY,ZZDDMA'}
-      name: text_box_search
-      properties: {placeholder: Enter Pokémon name…, role: outlined, text: Pikachu}
-      type: TextBox
-    - event_bindings: {}
-      layout_properties: {grid_position: 'BDMISC,UITEKD'}
-      name: button_search
-      properties: {background: Black, foreground: White, text: Search}
-      type: Button
-    - layout_properties: {grid_position: 'URHOOY,CZLFMA'}
-      name: image_pokemon
-      properties: {}
-      type: Image
-    - layout_properties: {grid_position: 'ZGAXDF,IKPJSG'}
-      name: label_info
-      properties: {icon: 'fa:info'}
-      type: Label
-    - layout_properties: {grid_position: 'HXWYRE,DCIIQX'}
-      name: label_url
-      properties: {foreground: White, icon: ''}
-      type: Label
-    - layout_properties: {grid_position: 'LCCFUZ,UFWCZA'}
-      name: text_area_moves
-      properties: {enabled: false, height: '1200'}
-      type: TextArea
-    layout_properties: {expand: true, width: 1000}
-    name: content_panel
-    properties: {col_widths: '{}', visible: true}
-    type: ColumnPanel
-  layout_properties: {slot: nav-right}
+  layout_properties: {slot: top-left-btn}
   name: navbar_links
   properties: {}
   type: FlowPanel
-- event_bindings: {}
-  layout_properties: {slot: title}
-  name: button_2
-  properties: {bold: true, font: Monospaced, icon: 'fa:plus', icon_align: left, italic: false, text: Claim card, tooltip: Add this card to your account deck, underline: true}
-  type: Button
-- layout_properties: {slot: left-nav}
-  name: link_1
-  properties: {icon: 'mi:cards', text: Cards, url: 'https://critical-adolescent-stop.anvil.app/cards'}
-  type: form:dep_72ntb5nseaszb:_Components.Link
 container:
   properties: {html: '@theme:standard-page.html'}
   type: HtmlTemplate

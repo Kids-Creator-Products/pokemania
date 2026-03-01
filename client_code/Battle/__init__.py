@@ -20,6 +20,8 @@ class Battle(BattleTemplate):
     if self.data['battle'].lower().strip() in anvil.users.get_user()['Cards'] or True:
       self.playerdata=anvil.server.call('get_pokemon_details',self.data['battle'])
     self.enemydata=anvil.server.call('get_pokemon_details',self.data['bad'])
+    self.image_1.source=self.enemydata['image']
+    self.image_2.source=self.playerdata['image']
     self.ismyturn=random.choice([False,True])
     self.e=[0,0]
     self.hp=[self.playerdata['health'],self.enemydata['health']]
@@ -38,7 +40,11 @@ class Battle(BattleTemplate):
         x=[int(self.getdata(atk)[1]) for atk in a if self.getdata()[1] not in ['None',None]]
       except:
         x=[]
-      
+        for i in a:
+          try:
+            x.append(int(self.getdata(i)[1]))
+          except:
+            pass
       y=[i for i in x if self.getenergies(i)<=self.e[1]]
       try:
         self.hp[0]-=max(y)
