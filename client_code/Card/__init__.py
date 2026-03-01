@@ -1,5 +1,6 @@
 from ._anvil_designer import CardTemplate
 from anvil import *
+import anvil.facebook.auth
 import anvil.server
 import m3.components as m3
 import anvil.google.auth, anvil.google.drive
