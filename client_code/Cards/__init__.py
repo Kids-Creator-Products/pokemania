@@ -9,13 +9,17 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.js
+from .. import PackData
 
 
 class Cards(CardsTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    x=anvil.users.get_user()['Cards']
+    try:
+      x=anvil.users.get_user()['Cards']
+    except:
+      self.button_2_click()
     y={}
     for i in x:
       if i in y:
@@ -24,6 +28,8 @@ class Cards(CardsTemplate):
         y[i]=1
     z=[i+'-'+str(y[i]) for i in y]
     self.drop_down_1.items=z
+    c=PackData.canclaim()
+    self.navigation_link_1.badge=c
     # Any code you write here will run before the form opens.
 
   @handle("button_1", "click")
@@ -46,3 +52,8 @@ class Cards(CardsTemplate):
     uri=anvil.server.get_app_origin('published')+'/battle/'+c1+'/'+c2
     x=Link(url=uri,text='Battle!')
     self.add_component(x)
+
+  @handle("button_2", "click")
+  def button_2_click(self, **event_args):
+    """This method is called when the component is clicked."""
+    anvil.users.login_with_form(allow_cancel=True)

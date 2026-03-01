@@ -9,6 +9,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 import random
+from anvil.js.window import Audio
 
 
 class Battle(BattleTemplate):
@@ -50,6 +51,7 @@ class Battle(BattleTemplate):
         self.hp[0]-=max(y)
       except:
         pass
+      self.sound()
       self.icon_button_1.enabled=True
       self.ismyturn=True
     if self.hp[0]<1 or self.hp[1]<1:
@@ -79,4 +81,8 @@ class Battle(BattleTemplate):
       if self.getenergies(y)<=self.e[0]:
         self.hp[1]-=y
         self.ismyturn=False
-      
+        self.sound()
+  def sound(self):
+    sound_url = anvil.server.get_app_origin('published')+'/_/theme/punch.mp3'
+    my_sound = Audio(sound_url)
+    my_sound.play()
