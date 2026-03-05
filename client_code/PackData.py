@@ -21,7 +21,8 @@ packs={
   'magical':['sylveon','murkrow','marshadow','mew','mewtwo','malamar','umbreon','espeon','natu','xatu','honchkrow','houndour','houndoom','hypno','drowzee',"rapidash",'meowth',"purrloin",'slowpoke','baltoy'],
   'icy wonderland':['snorunt','glaceon','cloyster','lapras','dewgong','beartic','snom','spheal','abomasnow','sealeo','kyogre'],
   'whales':['dewgong','kyogre','wailord','wailmer','cetitan'],
-  'dolphins':['kyogre','palafin','cetitan','dewgong']
+  'dolphins':['kyogre','palafin','cetitan','dewgong'],
+  'the army':['armarouge','falinks','zacian','escavalier']
 }
 
 def getlastclaim():
@@ -42,3 +43,24 @@ def getpacknames():
   return x
 def getpack(n):
   return packs[n]
+
+weaks=[
+  ['grass','normal'],
+  ['fire','grass'],
+  ['water','fire'],
+  ['electric','water'],
+  ['fighting','electric'],
+  ['steel','fire'],
+  ['pyschic','fighting'],
+  ['dark','pyschic'],
+  ['electric','fighting']
+]
+
+def weak(x,y):
+  x=x['types']
+  y=y['types']
+  for ix in x:
+    for iy in y:
+      if [ix,iy] in weaks:
+        return 30
+  return 0

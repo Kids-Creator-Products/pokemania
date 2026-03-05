@@ -11,7 +11,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import random
 from anvil.js.window import Audio
-
+from .. import PackData
 
 class Battle(BattleTemplate):
   def __init__(self, **properties):
@@ -49,7 +49,7 @@ class Battle(BattleTemplate):
             pass
       y=[i for i in x if self.getenergies(i)<=self.e[1]]
       try:
-        self.hp[0]-=max(y)
+        self.hp[0]-=max(y)+PackData.weak(self.enemydata,self.playerdata)
       except:
         pass
       #self.sound()
@@ -80,7 +80,7 @@ class Battle(BattleTemplate):
       x=self.dropdown_menu_1.selected_value
       y=int(self.getdata(x)[1])
       if self.getenergies(y)<=self.e[0]:
-        self.hp[1]-=y
+        self.hp[1]-=y+PackData.weak(self.playerdata,self.enemydata)
         self.ismyturn=False
         self.sound()
   def sound(self):
