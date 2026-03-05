@@ -6,8 +6,13 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
-from datetime import datetime
+#from datetime import datetime
+from datetime import datetime, timedelta
+import random
+
+# Get the current date and 
 # This is a module.
+
 
 packs={
   'fire':['charmander','charmeleon','charizard','moltres','arcanine','growlithe','entei','blaziken','ponyta','infernape','vulpix','magmar','flareon'],
@@ -22,7 +27,7 @@ packs={
   'icy wonderland':['snorunt','glaceon','cloyster','lapras','dewgong','beartic','snom','spheal','abomasnow','sealeo','kyogre'],
   'whales':['dewgong','kyogre','wailord','wailmer','cetitan'],
   'dolphins':['kyogre','palafin','cetitan','dewgong'],
-  'the army':['armarouge','falinks','zacian','escavalier']
+  'the army':['armarouge','falinks','zacian','escavalier','zamazenta']
 }
 
 def getlastclaim():
@@ -31,11 +36,13 @@ def getlastclaim():
   else:
     anvil.users.get_user()['last_claim']=datetime.now()
     return datetime.now()
+    
 def canclaim():
   if True:
     now=datetime.now()
     provided_date=getlastclaim()
     return provided_date.strftime("%Y-%m-%d %H") != now.strftime("%Y-%m-%d %H")
+
 def getpacknames():
   x=[]
   for k in packs:
@@ -62,5 +69,13 @@ def weak(x,y):
   for ix in x:
     for iy in y:
       if [ix,iy] in weaks:
-        return 30
+        return 50
   return 0
+
+def reward():
+  if random.randint(0,1)==1:
+    # Get the current date and time
+    today = datetime.now()
+    # Calculate the date and time for the day before
+    yesterday = today - timedelta(days=1)
+    anvil.users.get_user()["last_claim"]=yesterday

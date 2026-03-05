@@ -75,5 +75,6 @@ class Cards(CardsTemplate):
   @handle("drop_down_1", "change")
   def drop_down_1_change(self, **event_args):
     """This method is called when an item is selected"""
-    self.sound()
+    #self.sound()
+    pass
 

@@ -61,6 +61,7 @@ class Battle(BattleTemplate):
         t="DEFEAT!"
       else:
         t="VICTORY!"
+        PackData.reward()
       print(t)
       t="**"+t+"**"
       x=RichText(content=t,format='markdown')
