@@ -73,7 +73,8 @@ def get_pokemon_details(name):
       # Extract names from the 'moves' list
       'attacks': [m['move']['name'].replace('-', ' ').title()+'-'+getpower(m['move']['url']) for m in data['moves']],
       'types': [t['type']['name'] for t in data['types']],
-      'health':hp
+      'health':hp,
+      'sound':data['cries'].get('latest','')
     }
   return None
 

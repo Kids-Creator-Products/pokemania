@@ -59,7 +59,12 @@ class Battle(BattleTemplate):
         self.hp[0]-=max(y)+PackData.weak(self.enemydata,self.playerdata)
       except:
         pass
-      #self.sound()
+      try:
+        self.sound()
+      except:
+        pass
+      x=Audio(self.playerdata['sound'])
+      x.play()
       self.icon_button_1.enabled=True
       self.ismyturn=True
     if self.hp[0]<1 or self.hp[1]<1:
@@ -68,8 +73,11 @@ class Battle(BattleTemplate):
         t="DEFEAT!"
         if confirm('Retreat?'):
           open_form('Cards',battle=self.data['bad'])
+        else:
+          self.sound('Doubt.m4a')
       else:
         t="VICTORY!"
+        self.sound('B-Day.m4a')
         PackData.reward()
       print(t)
       t="**"+t+"**"
@@ -93,7 +101,7 @@ class Battle(BattleTemplate):
         self.hp[1]-=y+PackData.weak(self.playerdata,self.enemydata)
         self.ismyturn=False
         self.sound()
-  def sound(self):
-    sound_url = anvil.server.get_app_origin('published')+'/_/theme/punch.mp3'
+  def sound(self,surl='punch.mp3'):
+    sound_url = anvil.server.get_app_origin('published')+'/_/theme/'+surl
     my_sound = Audio(sound_url)
     my_sound.play()
