@@ -27,7 +27,7 @@ packs={
   'icy wonderland':['snorunt','glaceon','cloyster','lapras','dewgong','beartic','snom','spheal','abomasnow','sealeo','kyogre'],
   'whales':['dewgong','kyogre','wailord','wailmer','cetitan'],
   'dolphins':['kyogre','palafin','cetitan','dewgong'],
-  'the army':['armarouge','falinks','zacian','escavalier','zamazenta']
+  'the army':['armarouge','falinks','zacian','zamazenta']
 }
 
 def getlastclaim():
@@ -48,6 +48,7 @@ def getpacknames():
   for k in packs:
     x.append(k)
   return x
+  
 def getpack(n):
   return packs[n]
 
