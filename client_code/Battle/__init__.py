@@ -18,7 +18,14 @@ class Battle(BattleTemplate):
     # Set Form properties and Data Bindings.
     self.hp=[500,500]
     self.init_components(**properties)
-    self.data=anvil.server.startup_data
+    self.data={}
+    try:
+      self.data=anvil.server.startup_data
+    except:
+      self.data={}
+    if "battle" in properties:
+      self.data['battle']=properties['battle']
+      self.data['bad']=properties['bad']
     if self.data['battle'].lower().strip() in anvil.users.get_user()['Cards'] or True:
       self.playerdata=anvil.server.call('get_pokemon_details',self.data['battle'])
     self.enemydata=anvil.server.call('get_pokemon_details',self.data['bad'])
@@ -59,6 +66,8 @@ class Battle(BattleTemplate):
       self.clear()
       if self.hp[0]<1:
         t="DEFEAT!"
+        if confirm('Retreat?'):
+          open_form('Cards',battle=self.data['bad'])
       else:
         t="VICTORY!"
         PackData.reward()

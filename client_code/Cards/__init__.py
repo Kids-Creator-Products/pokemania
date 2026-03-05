@@ -29,9 +29,20 @@ class Cards(CardsTemplate):
       else:
         y[i]=1
     z=[i+'-'+str(y[i]) for i in y]
+    self.retreat=True
     self.drop_down_1.items=z
+    try:
+      self.text_box_1.text=properties.get('battle','')
+      if 'battle' in properties:
+        self.retreat=False
+    except:
+      pass
     c=PackData.canclaim()
     self.navigation_link_1.badge=c
+    if not self.retreat:
+      self.text_box_1.hide_text=True
+      x=Notification('Choose a pokemon to send in!',title='Battle!',timeout=5)
+      x.show()
     # Any code you write here will run before the form opens.
 
   @handle("button_1", "click")
@@ -52,6 +63,8 @@ class Cards(CardsTemplate):
     c1=self.drop_down_1.selected_value.split('-')[0]
     c2=self.text_box_1.text
     uri=anvil.server.get_app_origin('published')+'/battle/'+c1+'/'+c2
+    #anvil.js.window.location.href=uri
+    #open_form('Battle',battle=c1,bad=c2)
     x=Link(url=uri,text='Battle!')
     self.add_component(x)
 
