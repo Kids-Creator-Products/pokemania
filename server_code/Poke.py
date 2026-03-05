@@ -45,6 +45,7 @@ def getpower(url):
 @anvil.server.callable
 def get_pokemon_details(name):
   # Full API endpoint URL for this specific Pokémon
+  customs=requests.get('https://raw.githubusercontent.com/cool-guys-bfc2/custom-pokemon/refs/heads/main/cards/cards.json').json()
   api_url = f"https://pokeapi.co/api/v2/pokemon/{name.lower()}"
   response = requests.get(api_url)
   if response.status_code == 200:
