@@ -66,6 +66,8 @@ class Cards(CardsTemplate):
     #anvil.js.window.location.href=uri
     #open_form('Battle',battle=c1,bad=c2)
     x=Link(url=uri,text='Battle!')
+    if not self.retreat:
+      x.add_event_handler('click',self.clear)
     self.add_component(x)
 
   @handle("button_2", "click")
