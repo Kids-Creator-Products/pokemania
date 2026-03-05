@@ -21,6 +21,7 @@ class Cards(CardsTemplate):
       x=anvil.users.get_user()['Cards']
     except:
       self.button_2_click()
+      x=anvil.users.get_user()["Cards"]
     y={}
     for i in x:
       if i in y:
@@ -57,4 +58,22 @@ class Cards(CardsTemplate):
   @handle("button_2", "click")
   def button_2_click(self, **event_args):
     """This method is called when the component is clicked."""
-    anvil.users.login_with_form(allow_cancel=True)
+    if anvil.users.login_with_form(allow_cancel=True):
+      pass
+      if not anvil.users.get_user(allow_remembered=True)['Cards']:
+        anvil.users.get_user()['Cards']=[]
+  def sound(self):
+    # In client-side Python code
+    #try:
+    #self.audio_element.stop()
+    #except AttributeError:
+     # pass
+    audio_url = "/_/theme/punch.mp3" #Or use a URL from a Media object
+    self.audio_element = anvil.js.window.Audio(audio_url)
+    self.audio_element.play()
+
+  @handle("drop_down_1", "change")
+  def drop_down_1_change(self, **event_args):
+    """This method is called when an item is selected"""
+    self.sound()
+
