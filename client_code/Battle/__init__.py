@@ -11,6 +11,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import random
 from anvil.js.window import Audio
+import anvil.js
 from .. import PackData
 
 class Battle(BattleTemplate):
@@ -26,9 +27,12 @@ class Battle(BattleTemplate):
     if "battle" in properties:
       self.data['battle']=properties['battle']
       self.data['bad']=properties['bad']
-    if self.data['battle'].lower().strip() in anvil.users.get_user()['Cards'] or True:
-      self.playerdata=anvil.server.call('get_pokemon_details',self.data['battle'])
-    self.enemydata=anvil.server.call('get_pokemon_details',self.data['bad'])
+    try:
+      if self.data['battle'].lower().strip() in anvil.users.get_user()['Cards'] or True:
+        self.playerdata=anvil.server.call('get_pokemon_details',self.data['battle'])
+      self.enemydata=anvil.server.call('get_pokemon_details',self.data['bad'])
+    except:
+      anvil.js.window.location.reload()
     self.image_1.source=self.enemydata['image']
     self.image_2.source=self.playerdata['image']
     self.ismyturn=random.choice([False,True])
@@ -74,7 +78,10 @@ class Battle(BattleTemplate):
       else:
         t="VICTORY!"
         self.sound('B-Day.m4a')
-        PackData.reward()
+        if anvil.get_url_hash()=='last':
+          PackData.reward()
+        else:
+          open_form('Cards',battle=self.data['bad'],last=True)
       print(t)
       t="**"+t+"**"
       x=RichText(content=t,format='markdown')

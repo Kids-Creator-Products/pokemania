@@ -169,15 +169,13 @@ def search_tree(node, target):
 @anvil.server.callable
 def get_pokemon_details(name):
   # Full API endpoint URL for this specific Pokémon
-  if False:
+  """if False:
     customs=requests.get('https://raw.githubusercontent.com/cool-guys-bfc2/custom-pokemon/refs/heads/main/cards/cards.json').json()
     if name+'.json' in customs:
       card=requests.get('https://raw.githubusercontent.com/cool-guys-bfc2/custom-pokemon/refs/heads/main/cards/custom/{x}.json'.replace('{x}',name)).json()
       card['image']='https://raw.githubusercontent.com/cool-guys-bfc2/custom-pokemon/refs/heads/main/cards/images/'+name+'.png'
-      return card
-  if False:
-    pass
-    #return Custom.cards[name]
+      return card"""
+  #return Custom.cards[name]
   #except:
   #pass
   api_url = f"https://pokeapi.co/api/v2/pokemon/{name.lower()}"
@@ -189,10 +187,6 @@ def get_pokemon_details(name):
         base_hp = stat_entry['base_stat']
         #print(f"The base HP for {name.capitalize()} is: {base_hp}")
         hp=base_hp
-    try:
-      into=get_next_evolution(name)
-    except:
-      into=''
     return {
       'api_url': api_url,
       'name': data['name'].capitalize(),
@@ -201,8 +195,7 @@ def get_pokemon_details(name):
       'attacks': [m['move']['name'].replace('-', ' ').title()+'-'+getpower(m['move']['url']) for m in data['moves'][:8]],
       'types': [t['type']['name'] for t in data['types']],
       'health':hp,
-      'sound':data['cries'].get('latest',''),
-      "into":into
+      'sound':data['cries'].get('latest','')
     }
   return None
   

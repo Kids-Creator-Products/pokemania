@@ -17,6 +17,7 @@ class Cards(CardsTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    self.last=properties.get('last',False)
     try:
       x=anvil.users.get_user()['Cards']
     except:
@@ -66,6 +67,8 @@ class Cards(CardsTemplate):
     c1=self.drop_down_1.selected_value.split('-')[0]
     c2=self.text_box_1.text
     uri=anvil.server.get_app_origin('published')+'/battle/'+c1+'/'+c2
+    if self.last:
+      uri+='#last'
     #anvil.js.window.location.href=uri
     #open_form('Battle',battle=c1,bad=c2)
     x=Link(url=uri,text='Battle!')
