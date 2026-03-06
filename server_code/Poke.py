@@ -42,7 +42,6 @@ def getpower(url):
     return str(y.get('power','0'))+'-'+z
   else:
     return ''
-
 @anvil.server.callable
 def get_next_evolution(pokemon_name):
   # 1. Get species data to find evolution chain URL
@@ -70,9 +69,101 @@ def get_next_evolution(pokemon_name):
     return current_node['evolves_to'][0]['species']['name']
   else:
     return "Final Evolution"
-
 # Example usage
 #print(get_next_evolution("charmeleon")) # Output: charizard
+"""
+@anvil.server.callable
+def get_next_evolution(pokemon_name):
+  pokemon_name = pokemon_name.lower().strip()
+  species_url = f"https://pokeapi.co/api/v2/pokemon-species/{pokemon_name}/"
+  try:
+    species_data = requests.get(species_url).json()
+    evolution_chain_url = species_data['evolution_chain']['url']
+    chain_data = requests.get(evolution_chain_url).json()
+  except:
+    return "Final"
+
+  def find_next(node, target):
+    # If this node is the one we're looking for
+    if node['species']['name'] == target:
+      if node['evolves_to']:
+        # Return the name of the first available evolution
+        return node['evolves_to'][0]['species']['name'].capitalize()
+      return "Final Evolution"
+
+      # If not, check all possible branches (for Eevee, etc.)
+    for evolution in node['evolves_to']:
+      result = find_next(evolution, target)
+      if result:
+        return result
+    return None
+
+  result = find_next(chain_data['chain'], pokemon_name)
+  return result if result else "Final Evolution"
+"""
+"""
+@anvil.server.callable
+def get_next_evolution(pokemon_name):
+  pokemon_name = pokemon_name.lower().strip()
+  species_url = f"https://pokeapi.co{pokemon_name}/"
+
+  try:
+    species_data = requests.get(species_url).json()
+    chain_url = species_data['evolution_chain']['url']
+    chain_data = requests.get(chain_url).json()
+  except:
+    return "Final"
+
+  def find_target_node(node, target):
+    # 1. Is this the Pokémon we are looking for?
+    if node['species']['name'] == target:
+      return node
+
+      # 2. If not, check all its possible evolutions
+    for evolution in node['evolves_to']:
+      found = find_target_node(evolution, target)
+      if found:
+        return found
+    return None
+
+    # Start searching from the base of the chain (e.g., Charmander)
+  target_node = find_target_node(chain_data['chain'], pokemon_name)
+
+  if target_node and target_node['evolves_to']:
+    # Return the first evolution found in the list
+    return target_node['evolves_to'][0]['species']['name'].capitalize()
+
+  return "Final Evolution"
+"""
+"""
+@anvil.server.callable
+def get_next_evolution(pokemon_name):
+  name = pokemon_name.lower().strip()
+  try:
+    # 1. Get species to find the chain URL
+    species = requests.get(f"https://pokeapi.co/api/v2/pokemon-species/{name}/").json()
+    chain_data = requests.get(species['evolution_chain']['url']).json()
+
+    # 2. Start searching from the base of the chain
+    return search_tree(chain_data['chain'], name)
+  except:
+    return "Final Evolution"
+"""
+def search_tree(node, target):
+  # Is THIS the pokemon?
+  if node['species']['name'] == target:
+    if node['evolves_to']:
+      # Return the first available evolution
+      return node['evolves_to'][0]['species']['name'].capitalize()
+    return "Final Evolution"
+
+    # If not, check every branch (e.g., Eevee's 8 paths)
+  for next_node in node['evolves_to']:
+    found = search_tree(next_node, target)
+    if found:
+      return found
+
+  return None
 
 
 @anvil.server.callable
@@ -107,7 +198,7 @@ def get_pokemon_details(name):
       'name': data['name'].capitalize(),
       'image': data['sprites']['front_default'],
       # Extract names from the 'moves' list
-      'attacks': [m['move']['name'].replace('-', ' ').title()+'-'+getpower(m['move']['url']) for m in data['moves']],
+      'attacks': [m['move']['name'].replace('-', ' ').title()+'-'+getpower(m['move']['url']) for m in data['moves'][:8]],
       'types': [t['type']['name'] for t in data['types']],
       'health':hp,
       'sound':data['cries'].get('latest',''),
