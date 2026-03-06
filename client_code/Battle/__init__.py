@@ -59,10 +59,6 @@ class Battle(BattleTemplate):
         self.hp[0]-=max(y)+PackData.weak(self.enemydata,self.playerdata)
       except:
         pass
-      try:
-        self.sound()
-      except:
-        pass
       x=Audio(self.playerdata['sound'])
       x.play()
       self.icon_button_1.enabled=True
@@ -100,7 +96,8 @@ class Battle(BattleTemplate):
       if self.getenergies(y)<=self.e[0]:
         self.hp[1]-=y+PackData.weak(self.playerdata,self.enemydata)
         self.ismyturn=False
-        self.sound()
+        x=Audio(self.enemydata['sound'])
+        x.play()
   def sound(self,surl='punch.mp3'):
     sound_url = anvil.server.get_app_origin('published')+'/_/theme/'+surl
     my_sound = Audio(sound_url)

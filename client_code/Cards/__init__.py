@@ -72,7 +72,7 @@ class Cards(CardsTemplate):
     if not self.retreat:
       x.add_event_handler('click',self.clear)
     self.add_component(x)
-    self.sound('ThemeMusic/Battle.m4a')
+    #self.sound('ThemeMusic/Battle.m4a')
 
   @handle("button_2", "click")
   def button_2_click(self, **event_args):
@@ -124,3 +124,8 @@ class Cards(CardsTemplate):
       anvil.js.window.location.reload()
   def evolvable(self,val=True):
     self.button_3.enabled=val
+
+  @handle("button_4", "click")
+  def button_4_click(self, **event_args):
+    """This method is called when the component is clicked."""
+    open_form('Credits')
