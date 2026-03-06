@@ -19,7 +19,7 @@ packs={
   'basic':['pikachu','squirtle','charmander','ivysaur','eevee','clefairy'],
   'halloween':['murkrow','marshadow','pumpkaboo',"gengar",'banette','houndstone','dusknoir','chandelure','haunter','litwick','honchkrow','mismagius','noibat','noivern','ursaluna','ursaring','lunatone'],
   'eevee evolves':['eevee','sylveon','flareon','glaceon','vaporeon','jolteon','espeon','umbreon','leafeon'],
-  'electricute':['pikachu','pichu','raichu','lenler','zolteon','zapdos','helioptile','heliolisk','dedenne','pawmot','boltund',"morpeko",'minun','plusle'],
+  'electricute':['pikachu','pichu','raichu','lenler','jolteon','zapdos','helioptile','heliolisk','dedenne','pawmot','boltund',"morpeko",'minun','plusle'],
   'grassy wonders':['golem',"sandshrew",'venusaur','bulbasaur','ivysaur','exeggutor','exeggcute','victreebel','breloom','roserade','celebi','sceptile','leafeon','ogerpon',"magikarp"],
   'water':['squirtle','wartortle','blastoise','psyduck','cloyster','gyrados','vaporeon','suicune','kingdra','palkia','lapras','greninja','kyogre','shapedo'],
   'mighty dragons':['rayquaza',"dragonite",'garchomp','altaria','flygon','dragonair','charizard'],
@@ -27,7 +27,8 @@ packs={
   'icy wonderland':['snorunt','glaceon','cloyster','lapras','dewgong','beartic','snom','spheal','abomasnow','sealeo','kyogre'],
   'whales':['dewgong','kyogre','wailord','wailmer','cetitan'],
   'dolphins':['kyogre','palafin','cetitan','dewgong'],
-  'the army':['armarouge','falinks','zacian','zamazenta']
+  'the army':['armarouge','falinks','zacian','zamazenta'],
+  'swords and bolts':['doublade','melmetal','meltan']
 }
 
 def getlastclaim():

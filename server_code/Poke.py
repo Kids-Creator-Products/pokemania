@@ -10,7 +10,7 @@ import anvil.server
 import requests
 import random
 import datetime
-import Custom
+#import Custom
 
 def get_desc(url):
   move_url=url
@@ -43,6 +43,37 @@ def getpower(url):
   else:
     return ''
 
+@anvil.server.callable
+def get_next_evolution(pokemon_name):
+  # 1. Get species data to find evolution chain URL
+  species_url = f"https://pokeapi.co/api/v2/pokemon-species/{pokemon_name.lower()}/"
+  try:
+    species_data = requests.get(species_url).json()
+  except:
+    return 'Final'
+  evolution_chain_url = species_data['evolution_chain']['url']
+
+  # 2. Get the evolution chain data
+  chain_data = requests.get(evolution_chain_url).json()
+  chain = chain_data['chain']
+
+  # 3. Traverse the chain (Basic example)
+  # Find current pokemon in chain, then look at next evolves_to
+  current_node = chain
+  while current_node['species']['name'] != pokemon_name.lower():
+    if not current_node['evolves_to']:
+      return "Final"
+    current_node = current_node['evolves_to'][0]
+
+    # Return next evolution
+  if current_node['evolves_to']:
+    return current_node['evolves_to'][0]['species']['name']
+  else:
+    return "Final Evolution"
+
+# Example usage
+#print(get_next_evolution("charmeleon")) # Output: charizard
+
 
 @anvil.server.callable
 def get_pokemon_details(name):
@@ -53,8 +84,9 @@ def get_pokemon_details(name):
       card=requests.get('https://raw.githubusercontent.com/cool-guys-bfc2/custom-pokemon/refs/heads/main/cards/custom/{x}.json'.replace('{x}',name)).json()
       card['image']='https://raw.githubusercontent.com/cool-guys-bfc2/custom-pokemon/refs/heads/main/cards/images/'+name+'.png'
       return card
-  if name in Custom.cards:
-    return Custom.cards[name]
+  if False:
+    pass
+    #return Custom.cards[name]
   #except:
   #pass
   api_url = f"https://pokeapi.co/api/v2/pokemon/{name.lower()}"
@@ -66,6 +98,10 @@ def get_pokemon_details(name):
         base_hp = stat_entry['base_stat']
         #print(f"The base HP for {name.capitalize()} is: {base_hp}")
         hp=base_hp
+    try:
+      into=get_next_evolution(name)
+    except:
+      into=''
     return {
       'api_url': api_url,
       'name': data['name'].capitalize(),
@@ -74,10 +110,11 @@ def get_pokemon_details(name):
       'attacks': [m['move']['name'].replace('-', ' ').title()+'-'+getpower(m['move']['url']) for m in data['moves']],
       'types': [t['type']['name'] for t in data['types']],
       'health':hp,
-      'sound':data['cries'].get('latest','')
+      'sound':data['cries'].get('latest',''),
+      "into":into
     }
   return None
-
+  
 @anvil.server.callable
 def addCard(rn):
   n=rn.lower().strip()

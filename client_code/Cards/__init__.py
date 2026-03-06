@@ -22,6 +22,9 @@ class Cards(CardsTemplate):
     except:
       self.button_2_click()
       x=anvil.users.get_user()["Cards"]
+      if not x:
+        anvil.users.get_user()['Cards']=[]
+        anvil.js.window.location.reload()
     y={}
     for i in x:
       if i in y:
@@ -69,6 +72,7 @@ class Cards(CardsTemplate):
     if not self.retreat:
       x.add_event_handler('click',self.clear)
     self.add_component(x)
+    self.sound('ThemeMusic/Battle.m4a')
 
   @handle("button_2", "click")
   def button_2_click(self, **event_args):
@@ -77,13 +81,12 @@ class Cards(CardsTemplate):
       pass
       if not anvil.users.get_user(allow_remembered=True)['Cards']:
         anvil.users.get_user()['Cards']=[]
-  def sound(self):
-    # In client-side Python code
+  def sound(self,name='punch.mp3'):
     #try:
     #self.audio_element.stop()
     #except AttributeError:
      # pass
-    audio_url = "/_/theme/punch.mp3" #Or use a URL from a Media object
+    audio_url = "/_/theme/"+name #Or use a URL from a Media object
     self.audio_element = anvil.js.window.Audio(audio_url)
     self.audio_element.play()
 
@@ -93,3 +96,31 @@ class Cards(CardsTemplate):
     #self.sound()
     pass
 
+  @handle("button_3", "click")
+  def button_3_click(self, **event_args):
+    """This method is called when the component is clicked."""
+    self.evolvable(False)
+    x=self.drop_down_1.selected_value.split('-')
+    c=x[0]
+    if int(x[1])>1:
+      if True:
+        into=anvil.server.call_s('get_next_evolution',c)
+      #except:
+      #  return
+      owned=anvil.users.get_user()['Cards']
+      if 'Final' in into:
+        alert('Cancelled.')
+        self.evolvable()
+        return
+      if c in owned:
+        for i in range(2):
+          try:
+            owned.remove(c)
+          except:
+            pass
+      owned.append(into)
+      anvil.users.get_user()['Cards']=owned
+      self.evolvable()
+      anvil.js.window.location.reload()
+  def evolvable(self,val=True):
+    self.button_3.enabled=val
