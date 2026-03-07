@@ -33,8 +33,11 @@ class Battle(BattleTemplate):
       self.enemydata=anvil.server.call('get_pokemon_details',self.data['bad'])
     except:
       anvil.js.window.location.reload()
-    self.image_1.source=self.enemydata['image']
-    self.image_2.source=self.playerdata['image']
+    try:
+      self.image_1.source=self.enemydata['image']
+      self.image_2.source=self.playerdata['image']
+    except:
+      pass
     self.ismyturn=random.choice([False,True])
     self.e=[0,0]
     self.hp=[self.playerdata['health'],self.enemydata['health']]
