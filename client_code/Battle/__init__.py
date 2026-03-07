@@ -66,8 +66,8 @@ class Battle(BattleTemplate):
         self.hp[0]-=max(y)+PackData.weak(self.enemydata,self.playerdata)
       except:
         pass
-      x=Audio(self.playerdata['sound'])
-      x.play()
+      #x=Audio(self.playerdata['sound'])
+      #x.play()
       self.icon_button_1.enabled=True
       self.ismyturn=True
     if self.hp[0]<1 or self.hp[1]<1:
