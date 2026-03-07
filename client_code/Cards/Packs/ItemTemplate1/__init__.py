@@ -40,7 +40,8 @@ class ItemTemplate1(ItemTemplate1Template):
     else:
       x=alert('Could not claim.',buttons=buttonx)
     if x=='info':
-      alert('You can only open a pack every hour, each pack is usually two cards.',buttons=[('OK','cancel')])
+      #txt=' Premium cards give you a guarantee you'll get a card, for weak cards meant for you to evolve.'
+      alert('You can only open a pack every hour, each pack is usually two cards. Weak cards have premium packs for only them.',buttons=[('OK','cancel')])
     if x=='redirect':
       y=anvil.server.get_app_origin('published')+'/cards'
       self.add_component(Link(text='View Cards',url=y))

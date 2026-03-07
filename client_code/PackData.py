@@ -32,7 +32,10 @@ packs={
   'land animalia':['mankey',"lechonk",'wooper','charmander','squirtle','sandshrew','oranguru','rattata','caterpie','eevee','meowth','growlithe','pidove','pidgeot','empoleon',"stufful"],
   "dinosaurs":['tyrantrum','bastiodon','aurorus','baxcalibur','archeops','aerodactyl',"lapras"],
   "ice cream":['vanillite','vanillish','vanilluxe'],
-  'food':['vanillite','dachsbun','smoliv','tatsugiri','slurpuff','appletun','dipplin','sinistcha','scovillain','capsakid','cherubi','hydrapple']
+  'food':['vanillite','dachsbun','smoliv','tatsugiri','slurpuff','appletun','dipplin','sinistcha','scovillain','capsakid','cherubi','hydrapple','polteageist','poltchageist','barraskewda','dolliv','arboliva'],
+  'pidove premium':['pidove','pidove'],
+  "torchic premium":['torchic','torchic'],
+  "magikarp premium":['magikarp','magikarp']
 }
 
 def getlastclaim():
