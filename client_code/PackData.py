@@ -28,7 +28,8 @@ packs={
   'whales':['dewgong','kyogre','wailord','wailmer','cetitan'],
   'dolphins':['kyogre','palafin','cetitan','dewgong'],
   'the army':['armarouge','falinks','zacian','zamazenta'],
-  'swords and bolts':['doublade','melmetal','meltan']
+  'swords and bolts':['doublade','melmetal','meltan'],
+  'land animalia':['mankey',"lechonk",'wooper','charmander']
 }
 
 def getlastclaim():
