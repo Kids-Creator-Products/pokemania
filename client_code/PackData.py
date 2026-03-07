@@ -29,7 +29,8 @@ packs={
   'dolphins':['kyogre','palafin','cetitan','dewgong'],
   'the army':['armarouge','falinks','zacian','zamazenta'],
   'swords and bolts':['doublade','melmetal','meltan'],
-  'land animalia':['mankey',"lechonk",'wooper','charmander','squirtle','sandshrew','oranguru','rattata','caterpie','eevee','meowth','growlithe','pidove','pidgeot','empoleon']
+  'land animalia':['mankey',"lechonk",'wooper','charmander','squirtle','sandshrew','oranguru','rattata','caterpie','eevee','meowth','growlithe','pidove','pidgeot','empoleon',"stufful"],
+  "dinosaurs":['tyrantrum','bastiodon','aurorus','baxcalibur','archeops','aerodactyl',"lapras"]
 }
 
 def getlastclaim():

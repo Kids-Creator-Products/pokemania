@@ -125,9 +125,10 @@ class Cards(CardsTemplate):
       anvil.users.get_user()['Cards']=owned
       self.evolvable()
       anvil.js.window.location.reload()
+    else:
+      self.evolvable()
   def evolvable(self,val=True):
     self.button_3.enabled=val
-
   @handle("button_4", "click")
   def button_4_click(self, **event_args):
     """This method is called when the component is clicked."""
