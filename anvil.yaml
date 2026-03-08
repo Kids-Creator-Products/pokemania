@@ -31,7 +31,7 @@ db_schema:
       client_hidden: false
       name: remembered_logins
       type: simpleObject
-    - admin_ui: {width: 200}
+    - admin_ui: {order: 7, width: 385.22}
       client_hidden: false
       name: signed_up
       type: datetime
