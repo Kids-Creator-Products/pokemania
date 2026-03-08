@@ -74,7 +74,6 @@ class Battle(BattleTemplate):
       self.icon_button_1.enabled=True
       self.res,self.canuseitem=0,True
       self.ismyturn=True
-      self.canuseitem=True
     if self.hp[0]<1 or self.hp[1]<1:
       self.clear()
       if self.hp[0]<1:
@@ -123,8 +122,8 @@ class Battle(BattleTemplate):
   def button_1_click(self, **event_args):
     """This method is called when the component is clicked."""
     if self.ismyturn:
-      self.ismyturn=False
       self.atk=0
+      self.ismyturn=False
 
   @handle("dropdown_menu_2", "change")
   def dropdown_menu_2_change(self, **event_args):

@@ -58,7 +58,9 @@ components:
   name: dropdown_menu_2
   properties:
     allow_none: false
-    items: [potion, sword]
+    items: [potion, sword, armor]
+    placeholder: Choose an item
+    selected_bold: true
   type: form:dep_72ntb5nseaszb:_Components.DropdownMenu
 container:
   properties: {html: '@theme:standard-page.html'}
