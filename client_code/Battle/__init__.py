@@ -73,6 +73,7 @@ class Battle(BattleTemplate):
       #x.play()
       self.icon_button_1.enabled=True
       self.res,self.canuseitem=0,True
+      self.msg('Your turn')
       self.ismyturn=True
     if self.hp[0]<1 or self.hp[1]<1:
       self.clear()
@@ -110,6 +111,7 @@ class Battle(BattleTemplate):
       if self.getenergies(y)<=self.e[0]:
         self.hp[1]-=y+PackData.weak(self.playerdata,self.enemydata)+self.atk
         self.atk=0
+        self.msg("Opponent's Turn")
         self.ismyturn=False
         x=Audio(self.enemydata['sound'])
         x.play()
@@ -123,6 +125,7 @@ class Battle(BattleTemplate):
     """This method is called when the component is clicked."""
     if self.ismyturn:
       self.atk=0
+      self.msg("Opponent's Turn")
       self.ismyturn=False
 
   @handle("dropdown_menu_2", "change")
@@ -139,3 +142,6 @@ class Battle(BattleTemplate):
       else:
         return
       self.canuseitem=False
+  def msg(self,x):
+    y=Notification(x,title='Message')
+    y.show()
