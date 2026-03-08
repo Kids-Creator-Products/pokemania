@@ -66,20 +66,29 @@ weaks=[
   ['water','fire'],
   ['electric','water'],
   ['fighting','electric'],
-  ['steel','fire'],
+  ['fire',"steel"],
   ['pyschic','fighting'],
   ['dark','pyschic'],
-  ['electric','fighting']
+  ['grass','fighting'],
+  ['steel','fairy'],
+  ['fairy','dragon']
 ]
+
+def resistance(x,y):
+  for ix in x:
+    for iy in y:
+      if ix==iy:
+        return -30
+  return 0
 
 def weak(x,y):
   x=x['types']
   y=y['types']
   for ix in x:
     for iy in y:
-      if [ix,iy] in weaks:
-        return 50
-  return 0
+      if [ix,iy] in weaks and ix not in y:
+        return 50+resistance(x,y)
+  return resistance(x,y)
 
 def reward():
   if random.randint(0,1)==1:
