@@ -48,6 +48,11 @@ components:
   name: content_panel
   properties: {}
   type: ColumnPanel
+- event_bindings: {}
+  layout_properties: {slot: title}
+  name: button_1
+  properties: {text: End turn}
+  type: form:dep_72ntb5nseaszb:_Components.Button
 container:
   properties: {html: '@theme:standard-page.html'}
   type: HtmlTemplate

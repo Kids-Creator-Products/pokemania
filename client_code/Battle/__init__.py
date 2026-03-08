@@ -112,3 +112,9 @@ class Battle(BattleTemplate):
     sound_url = anvil.server.get_app_origin('published')+'/_/theme/'+surl
     my_sound = Audio(sound_url)
     my_sound.play()
+
+  @handle("button_1", "click")
+  def button_1_click(self, **event_args):
+    """This method is called when the component is clicked."""
+    if self.ismyturn:
+      self.ismyturn=False
