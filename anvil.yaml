@@ -90,7 +90,7 @@ services:
     user_table: users
   source: /runtime/services/anvil/users.yml
 - client_config: {}
-  server_config: {}
+  server_config: {app_origin_redirect: false, client_id: ''}
   source: /runtime/services/google.yml
 - client_config: {}
   server_config: {}

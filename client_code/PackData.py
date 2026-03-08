@@ -35,7 +35,8 @@ packs={
   'food':['vanillite','dachsbun','smoliv','tatsugiri','slurpuff','appletun','dipplin','sinistcha','scovillain','capsakid','cherubi','hydrapple','polteageist','poltchageist','barraskewda','dolliv','arboliva'],
   'pidove premium':['pidove','pidove'],
   "torchic premium":['torchic','torchic'],
-  "magikarp premium":['magikarp','magikarp']
+  "magikarp premium":['magikarp','magikarp'],
+  'stufful premium':['stufful','stufful']
 }
 
 def getlastclaim():
@@ -71,7 +72,10 @@ weaks=[
   ['dark','pyschic'],
   ['grass','fighting'],
   ['steel','fairy'],
-  ['fairy','dragon']
+  ['fairy','dragon'],
+  ['bug','dark'],
+  ["fairy","dark"],
+  ['fighting','dark']
 ]
 
 def resistance(x,y):
