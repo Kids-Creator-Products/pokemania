@@ -19,6 +19,8 @@ class Battle(BattleTemplate):
     # Set Form properties and Data Bindings.
     self.hp=[500,500]
     self.init_components(**properties)
+    self.atk=0
+    self.res=0
     self.data={}
     try:
       self.data=anvil.server.startup_data
@@ -39,6 +41,7 @@ class Battle(BattleTemplate):
     except:
       pass
     self.ismyturn=random.choice([False,True])
+    self.canuseitem=self.ismyturn
     self.e=[0,0]
     self.hp=[self.playerdata['health'],self.enemydata['health']]
     # Any code you write here will run before the form opens.
@@ -63,13 +66,15 @@ class Battle(BattleTemplate):
             pass
       y=[i for i in x if self.getenergies(i)<=self.e[1]]
       try:
-        self.hp[0]-=max(y)+PackData.weak(self.enemydata,self.playerdata)
+        self.hp[0]-=max(y)+PackData.weak(self.enemydata,self.playerdata)-self.res
       except:
         pass
       #x=Audio(self.playerdata['sound'])
       #x.play()
       self.icon_button_1.enabled=True
+      self.res,self.canuseitem=0,True
       self.ismyturn=True
+      self.canuseitem=True
     if self.hp[0]<1 or self.hp[1]<1:
       self.clear()
       if self.hp[0]<1:
@@ -104,7 +109,8 @@ class Battle(BattleTemplate):
       x=self.dropdown_menu_1.selected_value
       y=int(self.getdata(x)[1])
       if self.getenergies(y)<=self.e[0]:
-        self.hp[1]-=y+PackData.weak(self.playerdata,self.enemydata)
+        self.hp[1]-=y+PackData.weak(self.playerdata,self.enemydata)+self.atk
+        self.atk=0
         self.ismyturn=False
         x=Audio(self.enemydata['sound'])
         x.play()
@@ -118,3 +124,19 @@ class Battle(BattleTemplate):
     """This method is called when the component is clicked."""
     if self.ismyturn:
       self.ismyturn=False
+      self.atk=0
+
+  @handle("dropdown_menu_2", "change")
+  def dropdown_menu_2_change(self, **event_args):
+    """This method is called when an item is selected"""
+    if self.canuseitem and self.ismyturn:
+      x=self.dropdown_menu_2.selected_value.lower()
+      if x=='potion':
+        self.hp[0]=min([self.hp[0]+30,self.playerdata['health']])
+      if x=='sword':
+        self.atk=40
+      if x=='armor':
+        self.res=50
+      else:
+        return
+      self.canuseitem=False

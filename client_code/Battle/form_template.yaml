@@ -53,6 +53,13 @@ components:
   name: button_1
   properties: {text: End turn}
   type: form:dep_72ntb5nseaszb:_Components.Button
+- event_bindings: {}
+  layout_properties: {slot: left-nav}
+  name: dropdown_menu_2
+  properties:
+    allow_none: false
+    items: [potion, sword]
+  type: form:dep_72ntb5nseaszb:_Components.DropdownMenu
 container:
   properties: {html: '@theme:standard-page.html'}
   type: HtmlTemplate
