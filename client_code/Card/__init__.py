@@ -28,4 +28,6 @@ class Card(CardTemplate):
     self.heading_1.text=self.x['name']+'      '+str(self.x['health'])+' HP              '+self.x['types'][0]
     self.image_1.source=self.x["image"]
     self.rich_text_1.content="<br/>".join([i.title() for i in self.x['attacks']])
-    self.content_panel.background=PackData.colors[self.x['types'][0].title()]
+
+    c=PackData.colors[self.x['types'][0].title()]
+    self.background=c
