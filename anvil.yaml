@@ -1,5 +1,22 @@
 allow_embedding: true
 db_schema:
+  files:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      client_hidden: false
+      name: path
+      type: string
+    - admin_ui: {order: 1, width: 200}
+      client_hidden: false
+      name: file
+      type: media
+    - admin_ui: {order: 2, width: 200}
+      client_hidden: false
+      name: file_version
+      type: string
+    server: full
+    title: Files
   users:
     client: full
     columns:
@@ -51,6 +68,10 @@ db_schema:
       client_hidden: false
       name: last_claim
       type: datetime
+    - admin_ui: {order: 12, width: 200}
+      client_hidden: false
+      name: mfa
+      type: simpleObject
     server: full
     title: Users
 dependencies:
@@ -78,7 +99,7 @@ services:
 - client_config: {enable_v2: false}
   server_config: {auto_create_missing_columns: true}
   source: /runtime/services/tables.yml
-- client_config: {allow_remember_me: true, allow_signup: true, confirm_email: true, enable_automatically: true, remember_me_days: 365, require_secure_passwords: true, share_login_status: true, use_email: true, use_facebook: true, use_google: true, use_token: false}
+- client_config: {allow_mfa_email_reset: false, allow_remember_me: true, allow_signup: true, confirm_email: true, enable_automatically: true, mfa_timeout_days: 0, remember_me_days: 365, require_mfa: false, require_secure_passwords: true, share_login_status: true, use_email: true, use_facebook: true, use_google: true, use_token: true}
   server_config:
     email_content:
       confirm_address:
@@ -104,6 +125,9 @@ services:
 - client_config: {}
   server_config: {}
   source: /runtime/services/anvil/secrets.yml
+- client_config: {}
+  server_config: {file_table: files}
+  source: /runtime/services/anvil/files.yml
 startup: {module: Cards, type: form}
 startup_form: null
 uplink_visible: true

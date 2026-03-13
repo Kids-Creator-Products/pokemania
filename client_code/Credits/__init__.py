@@ -1,5 +1,6 @@
 from ._anvil_designer import CreditsTemplate
 from anvil import *
+from routing import router
 import anvil.facebook.auth
 import anvil.server
 import m3.components as m3

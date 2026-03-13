@@ -13,7 +13,7 @@ components:
   - event_bindings: {}
     layout_properties: {grid_position: 'PBVNGU,DTOQDI'}
     name: button_1
-    properties: {text: View card, visible: false}
+    properties: {enabled: true, text: View card, visible: true}
     type: Button
   - event_bindings: {}
     layout_properties: {grid_position: 'FCBHJV,DYMBNC'}

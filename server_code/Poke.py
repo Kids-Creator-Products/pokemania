@@ -1,3 +1,5 @@
+import anvil.files
+from anvil.files import data_files
 import anvil.secrets
 import anvil.facebook.auth
 import anvil.google.auth, anvil.google.drive, anvil.google.mail
@@ -11,6 +13,13 @@ import requests
 import random
 import datetime
 #import Custom
+
+def fixattack(atk):
+  y=atk.split('-')
+  if 'none' in atk.lower():
+    y[1]='0'
+  return '-'.join(y)
+
 
 def get_desc(url):
   move_url=url
@@ -192,7 +201,7 @@ def get_pokemon_details(name):
       'name': data['name'].capitalize(),
       'image': data['sprites']['front_default'],
       # Extract names from the 'moves' list
-      'attacks': [m['move']['name'].replace('-', ' ').title()+'-'+getpower(m['move']['url']) for m in data['moves'][:8]],
+      'attacks': [fixattack(m['move']['name'].replace('-', ' ').title()+'-'+getpower(m['move']['url'])) for m in data['moves'][:8]],
       'types': [t['type']['name'] for t in data['types']],
       'health':hp,
       'sound':data['cries'].get('latest','')
@@ -216,7 +225,7 @@ def addPack(li,a=2):
 
 @anvil.server.route('/pokemon/:name')
 def pokemon(name):
-  return anvil.server.AppResponder(data={'pokemon':name}).load_form('Form1')
+  return anvil.server.AppResponder(data={'name':name}).load_form('Card')
   
 @anvil.server.route("/cards")
 def cards():

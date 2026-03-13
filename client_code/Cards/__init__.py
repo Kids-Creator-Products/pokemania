@@ -1,5 +1,6 @@
 from ._anvil_designer import CardsTemplate
 from anvil import *
+from routing import router
 import anvil.facebook.auth
 import m3.components as m3
 import anvil.server
@@ -54,6 +55,10 @@ class Cards(CardsTemplate):
     """This method is called when the button is clicked"""
     x=self.drop_down_1.selected_value.split("-")[0]
     y=anvil.server.get_app_origin('published')+'/pokemon/'+x
+    try:
+      anvil.js.window.location.replace(y)
+    except:
+      pass
     z=Link(url=y,text='Open me to enter!')
     self.content_panel.add_component(z)
 
@@ -86,7 +91,7 @@ class Cards(CardsTemplate):
         anvil.users.get_user()['Cards']=[]
   def sound(self,name='punch.mp3'):
     #try:
-    #self.audio_element.stop()
+    #  self.audio_element.stop()
     #except AttributeError:
      # pass
     audio_url = "/_/theme/"+name #Or use a URL from a Media object

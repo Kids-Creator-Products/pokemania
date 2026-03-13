@@ -10,7 +10,7 @@ components:
     type: RichText
   layout_properties: {slot: default}
   name: content_panel
-  properties: {}
+  properties: {foreground: White}
   type: ColumnPanel
 - layout_properties: {slot: nav-right}
   name: navbar_links
@@ -18,7 +18,7 @@ components:
   type: FlowPanel
 - layout_properties: {slot: title}
   name: heading_1
-  properties: {style: title}
+  properties: {bold: true, icon: '', style: title, underline: true}
   type: form:dep_72ntb5nseaszb:_Components.Heading
 container:
   properties: {html: '@theme:standard-page.html'}
@@ -27,4 +27,4 @@ custom_component: true
 custom_component_container: false
 is_package: true
 properties:
-- {default_binding_prop: true, default_value: pikachu, group: Main, important: true, name: name, type: string}
+- {default_binding_prop: true, default_value: '', group: Main, important: true, name: name, type: string}
