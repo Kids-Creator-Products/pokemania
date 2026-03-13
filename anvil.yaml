@@ -57,6 +57,9 @@ dependencies:
 - dep_id: dep_72ntb5nseaszb
   resolution_hints: {app_id: 4UK6WHQ6UX7AKELK, name: Material 3 Theme, package_name: m3}
   version: {version_tag: v1.2.6}
+- dep_id: dep_dp0fhp3ask68r
+  resolution_hints: {app_id: 3ACFHAQDBLLJX7FL, name: NUI Library, package_name: NUI}
+  version: {version_tag: v2.1}
 metadata: {logo_img: 'asset:IMG_0105.webp', title: Pokemania}
 name: Pokemania
 native_deps: {head_html: ''}
@@ -69,7 +72,7 @@ runtime_options:
   version: 3
 secrets: {}
 services:
-- client_config: {}
+- client_config: {enable_v2: false}
   server_config: {auto_create_missing_columns: true}
   source: /runtime/services/tables.yml
 - client_config: {allow_remember_me: true, allow_signup: true, confirm_email: true, enable_automatically: true, remember_me_days: 365, require_secure_passwords: true, share_login_status: true, use_email: true, use_facebook: true, use_google: true, use_token: false}

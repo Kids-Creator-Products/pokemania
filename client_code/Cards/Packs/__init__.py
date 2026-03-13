@@ -23,6 +23,8 @@ class Packs(PacksTemplate):
     y=PackData.getpacknames()
     for i in y:
       z=PackData.getpack(i)
+      if i in PackData.regions:
+        i=i+' Region'
       if len(z)>0:
         x.append({'name':i,'data':z})
     self.repeating_panel_1.items=x
