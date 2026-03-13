@@ -23,7 +23,8 @@ class Packs(PacksTemplate):
     y=PackData.getpacknames()
     for i in y:
       z=PackData.getpack(i)
-      x.append({'name':i,'data':z})
+      if len(z)>0:
+        x.append({'name':i,'data':z})
     self.repeating_panel_1.items=x
     # Any code you write here will run before the form opens.
 

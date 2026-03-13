@@ -69,8 +69,7 @@ packs={
   'food':['vanillite','dachsbun','smoliv','tatsugiri','slurpuff','appletun','dipplin','sinistcha','scovillain','capsakid','cherubi','hydrapple','polteageist','poltchageist','barraskewda','dolliv','arboliva'],
   'pidove premium':['pidove','pidove'],
   "torchic premium":['torchic','torchic'],
-  "magikarp premium":['magikarp','magikarp'],
-  'stufful premium':['stufful','stufful']
+  "magikarp premium":['magikarp','magikarp']
 }
 
 def getlastclaim():
@@ -98,7 +97,10 @@ def getpack(n):
   if n in packs:
     return packs[n]
   else:
-    return get_random_pokemon_from_region(n,count=10)
+    try:
+      return get_random_pokemon_from_region(n,count=10)
+    except:
+      return []
 
 weaks=[
   ['grass','normal'],
