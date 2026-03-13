@@ -6,12 +6,46 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
-#from datetime import datetime
 from datetime import datetime, timedelta
 import random
+import anvil.http
 
-# Get the current date and 
-# This is a module.
+#This is a module.
+
+regions=[
+  'kanto',
+  'johto',
+  'hoenn',
+  'sinnoh',
+  'unova',
+  'kalos',
+  'alola',
+  'galar',
+  'paldea'
+]
+
+def get_random_pokemon_from_region(region_name, count=2):
+  # 1. Get region Pokedex data
+  url = f"https://pokeapi.co/api/v2/pokedex/{region_name}"
+  pokedex = anvil.http.request(url, json=True)
+
+  # 2. Extract pokemon entries
+  pokemon_entries = pokedex['pokemon_entries']
+
+  # 3. Select random samples
+  if count > len(pokemon_entries):
+    count = len(pokemon_entries)
+
+  selected_pokemon = random.sample(pokemon_entries, count)
+
+  # 4. Format/Fetch details for each selected pokemon
+  result = []
+  for p in selected_pokemon:
+    name = p['pokemon_species']['name']
+    # You could call pokeapi again here for images if needed
+    result.append(name)
+
+  return result
 
 
 packs={
@@ -56,10 +90,15 @@ def getpacknames():
   x=[]
   for k in packs:
     x.append(k)
+  for k in regions:
+    x.append(k)
   return x
   
 def getpack(n):
-  return packs[n]
+  if n in packs:
+    return packs[n]
+  else:
+    return get_random_pokemon_from_region(n,count=10)
 
 weaks=[
   ['grass','normal'],
@@ -101,3 +140,28 @@ def reward():
     # Calculate the date and time for the day before
     yesterday = today - timedelta(days=1)
     anvil.users.get_user()["last_claim"]=yesterday
+
+"""
+def get_random_pokemon_from_region(region_name, count=2):
+  # 1. Get region Pokedex data
+  url = f"https://pokeapi.co/api/v2/pokedex/{region_name}"
+  pokedex = anvil.http.request(url, json=True)
+
+  # 2. Extract pokemon entries
+  pokemon_entries = pokedex['pokemon_entries']
+
+  # 3. Select random samples
+  if count > len(pokemon_entries):
+    count = len(pokemon_entries)
+
+  selected_pokemon = random.sample(pokemon_entries, count)
+
+  # 4. Format/Fetch details for each selected pokemon
+  result = []
+  for p in selected_pokemon:
+    name = p['pokemon_species']['name']
+    # You could call pokeapi again here for images if needed
+    result.append(name)
+
+  return result
+"""
