@@ -60,6 +60,9 @@ dependencies:
 - dep_id: dep_dp0fhp3ask68r
   resolution_hints: {app_id: 3ACFHAQDBLLJX7FL, name: NUI Library, package_name: NUI}
   version: {version_tag: v2.1}
+- dep_id: dep_lyrwvm8hactfa7
+  resolution_hints: {app_id: 3PIDO5P3H4VPEMPL, name: routing, package_name: routing}
+  version: {version_tag: v0.5.0}
 metadata: {logo_img: 'asset:IMG_0105.webp', title: Pokemania}
 name: Pokemania
 native_deps: {head_html: ''}
