@@ -3,7 +3,7 @@ components:
   - event_bindings: {}
     layout_properties: {grid_position: 'QWOCVK,OYEBRM'}
     name: button_4
-    properties: {icon: 'mi:contract', text: Credits}
+    properties: {icon: 'mi:contract', text: Credits & Info}
     type: form:dep_72ntb5nseaszb:_Components.Button
   - event_bindings: {}
     layout_properties: {grid_position: 'ULHLEO,YUPRCL'}
@@ -40,6 +40,10 @@ components:
     name: button_5
     properties: {icon: 'mi:bolt', text: Offer card}
     type: form:dep_72ntb5nseaszb:_Components.Button
+  - layout_properties: {grid_position: 'PSXADS,BFCPAJ'}
+    name: navigation_link_2
+    properties: {icon: 'mi:chat', navigate_to: Chat, text: Comments}
+    type: form:dep_72ntb5nseaszb:_Components.NavigationLink
   layout_properties: {slot: default}
   name: content_panel
   properties: {}

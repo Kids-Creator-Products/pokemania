@@ -23,6 +23,7 @@ def setoffer(x,y):
   setproperty('For',y)
 
 def switch(w,y):
+  w=w.split('-')[0]
   x=anvil.users.get_user()['Cards']
   x.remove(w)
   setproperty('Cards',x)
@@ -39,3 +40,19 @@ def trade():
 
 def getFor():
   return anvil.users.get_user()['For']
+
+def getmsg():
+  r=anvil.users.get_user()['msg']
+  if not r:
+    return []
+  return r
+
+def sendmsg(usr,msg):
+  d=app_tables.users.get(email=usr)
+  if not d:
+    return False
+  d=d['msg']
+  if not d:
+    d=[]
+  d.append(msg)
+  return True
