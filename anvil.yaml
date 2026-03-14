@@ -78,19 +78,16 @@ dependencies:
 - dep_id: dep_72ntb5nseaszb
   resolution_hints: {app_id: 4UK6WHQ6UX7AKELK, name: Material 3 Theme, package_name: m3}
   version: {version_tag: v1.2.6}
-- dep_id: dep_dp0fhp3ask68r
-  resolution_hints: {app_id: 3ACFHAQDBLLJX7FL, name: NUI Library, package_name: NUI}
-  version: {version_tag: v2.1}
-- dep_id: dep_115s5iqt4463g4
-  resolution_hints: {app_id: N7KFE4YBWMGWJ5OX, name: anvil-reactive, package_name: anvil_reactive}
-  version: {version_tag: v0.1.3}
 - dep_id: dep_kuzh2zhpdaycj
   resolution_hints: {app_id: C6ZZPAPN4YYF5NVJ, name: Anvil Extras, package_name: anvil_extras}
   version: {version_tag: v3.6.1}
+- dep_id: dep_w3p2dmdcyj3qa
+  resolution_hints: {app_id: 5YU7BBT6T5O7ZNOX, name: Anvil Labs, package_name: anvil_labs}
+  version: {branch: master}
 metadata: {logo_img: 'asset:IMG_0105.webp', title: Pokemania}
 name: Pokemania
 native_deps: {head_html: <link rel="stylesheet" href="_/theme/style.css">}
-package_name: Pokemania
+package_name: Poke
 renamed: true
 runtime_options:
   client_version: '3'
