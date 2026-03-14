@@ -6,6 +6,7 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+import random
 # This is a module.
 # You can define variables and functions here, and use them from any form. For example, in a top-level form:
 #
@@ -30,10 +31,11 @@ def switch(w,y):
 
 def trade():
   x=anvil.users.get_user()
-  try:
-    switch(x['Offer'],x['For'])
-  except:
-    pass
+  if random.randint(1,3)==2:
+    try:
+      switch(x['Offer'],x['For'])
+    except:
+      pass
 
 def getFor():
   return anvil.users.get_user()['For']
