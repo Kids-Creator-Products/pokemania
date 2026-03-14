@@ -11,6 +11,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.js
 from .. import PackData
+from .. import Websocket
 
 class Cards(CardsTemplate):
   def __init__(self, **properties):
@@ -40,8 +41,11 @@ class Cards(CardsTemplate):
         self.retreat=False
     except:
       pass
+    self.text_box_1.text=Websocket.getFor()
     c=PackData.canclaim()
     self.navigation_link_1.badge=c
+    if c:
+      Websocket.trade()
     if not self.retreat:
       self.text_box_1.hide_text=True
       x=Notification('Choose a pokemon to send in!',title='Battle!',timeout=5)
@@ -137,3 +141,11 @@ class Cards(CardsTemplate):
   def button_4_click(self, **event_args):
     """This method is called when the component is clicked."""
     open_form('Credits')
+
+  @handle("button_5", "click")
+  def button_5_click(self, **event_args):
+    """This method is called when the component is clicked."""
+    if confirm('Offer card? Cancel to clear current offer.'):
+      Websocket.setoffer(self.drop_down_1.selected_value,self.text_box_1.text)
+    else:
+      Websocket.setoffer(None,None)

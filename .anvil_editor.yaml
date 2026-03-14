@@ -21,6 +21,7 @@ unique_ids:
     Form1: KI3KW55ZFWI72TTRH2D2BSXIFM3Z2I67
   modules:
     PackData: '1771859313489524865300266.22833'
+    Websocket: '1773509674376886544698112.3833'
   scripts: {}
   server_modules:
     Custom: '1772747522436525324860152.4686'

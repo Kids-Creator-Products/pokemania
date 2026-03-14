@@ -30,6 +30,11 @@ components:
     name: button_3
     properties: {icon: 'mi:combine_columns', text: Evolve}
     type: form:dep_72ntb5nseaszb:_Components.Button
+  - event_bindings: {}
+    layout_properties: {grid_position: 'BZDKPM,HUDGPL'}
+    name: button_5
+    properties: {text: Offer card}
+    type: form:dep_72ntb5nseaszb:_Components.Button
   layout_properties: {slot: default}
   name: content_panel
   properties: {}

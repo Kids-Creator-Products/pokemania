@@ -70,8 +70,12 @@ db_schema:
       type: datetime
     - admin_ui: {order: 12, width: 200}
       client_hidden: false
-      name: mfa
-      type: simpleObject
+      name: Offer
+      type: string
+    - admin_ui: {order: 13, width: 200}
+      client_hidden: false
+      name: For
+      type: string
     server: full
     title: Users
 dependencies:
