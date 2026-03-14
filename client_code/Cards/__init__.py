@@ -12,7 +12,6 @@ from anvil.tables import app_tables
 import anvil.js
 from .. import PackData
 
-
 class Cards(CardsTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
