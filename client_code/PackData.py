@@ -33,15 +33,11 @@ colors = {
 }
 # Example Usage:
 # print(f"Fire type color: {pokemon_type_colors['Fire']}")
-
+def getcolor(types):
+  return colors[types[0].title()]
 regions=[
   'kanto',
-  'johto',
   'hoenn',
-  'sinnoh',
-  'unova',
-  'kalos',
-  'alola',
   'galar',
   'paldea'
 ]

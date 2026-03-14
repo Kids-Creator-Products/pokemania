@@ -4,11 +4,26 @@
   border-width: 10px;
   max-width: 400px;
   align-content: middle;
+  background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.3) 50%,
+      rgba(255, 255, 255, 0) 
+  );
 }
 .anvil-role-image-poke {
   border-style: solid; /* A border style is required */
-  border-color: silver;
+  border-color: lightsteelblue;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
   border-width: 10px;
   max-width: 400px;
   align-content: middle;
+}
+.anvil-role-card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }

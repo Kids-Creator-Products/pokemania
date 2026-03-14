@@ -54,7 +54,8 @@ class Cards(CardsTemplate):
     x=self.drop_down_1.selected_value.split("-")[0]
     y=anvil.server.get_app_origin('published')+'/pokemon/'+x
     try:
-      anvil.js.window.location.replace(y)
+      if anvil.confirm('Redirect?'):
+        anvil.js.window.location.replace(y)
     except:
       pass
     z=Link(url=y,text='Open me to enter!')
