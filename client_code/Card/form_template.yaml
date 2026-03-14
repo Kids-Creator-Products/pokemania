@@ -1,8 +1,15 @@
 components:
 - components:
+  - layout_properties: {grid_position: 'GURVPR,GNSTAG'}
+    name: heading_1
+    properties: {bold: true, icon: '', style: title, text: Loading…, text_color: White, underline: true}
+    type: form:dep_72ntb5nseaszb:_Components.Heading
   - layout_properties: {grid_position: 'PDXYBF,FCBRVW'}
     name: image_1
-    properties: {}
+    properties:
+      border: ''
+      height: '200'
+      role: [card]
     type: Image
   - layout_properties: {grid_position: 'PVGUOH,UGFDFB'}
     name: rich_text_1
@@ -10,16 +17,16 @@ components:
     type: RichText
   layout_properties: {slot: default}
   name: content_panel
-  properties: {foreground: White}
+  properties: {border: '', foreground: White, role: card, tooltip: Card}
   type: ColumnPanel
 - layout_properties: {slot: nav-right}
   name: navbar_links
   properties: {}
   type: FlowPanel
 - layout_properties: {slot: title}
-  name: heading_1
-  properties: {bold: true, icon: '', style: title, text_color: White, underline: true}
-  type: form:dep_72ntb5nseaszb:_Components.Heading
+  name: navigation_link_1
+  properties: {badge: false, icon: 'mi:home', navigate_to: Cards, text: Home}
+  type: form:dep_72ntb5nseaszb:_Components.NavigationLink
 container:
   properties: {foreground: White, html: '@theme:standard-page.html'}
   type: HtmlTemplate

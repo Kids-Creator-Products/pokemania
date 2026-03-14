@@ -31,5 +31,6 @@ class Card(CardTemplate):
 
     c=PackData.colors[self.x['types'][0].title()]
     self.content_panel.background=c
-    self.heading_1.background_color='white'
-    self.heading_1.text_color=c
+    self.heading_1.background_color=c
+    self.image_1.background=c
+    self.heading_1.text_color='white'
