@@ -1,4 +1,3 @@
-from routing import router
 import anvil.facebook.auth
 import anvil.server
 import anvil.google.auth, anvil.google.drive

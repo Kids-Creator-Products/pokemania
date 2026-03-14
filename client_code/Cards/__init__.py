@@ -1,6 +1,5 @@
 from ._anvil_designer import CardsTemplate
 from anvil import *
-from routing import router
 import anvil.facebook.auth
 import m3.components as m3
 import anvil.server

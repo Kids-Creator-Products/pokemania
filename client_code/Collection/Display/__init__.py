@@ -1,7 +1,6 @@
 from ._anvil_designer import DisplayTemplate
 from anvil import *
 import anvil.server
-from routing import router
 import m3.components as m3
 import anvil.facebook.auth
 import anvil.google.auth, anvil.google.drive
