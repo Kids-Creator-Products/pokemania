@@ -81,9 +81,9 @@ dependencies:
 - dep_id: dep_kuzh2zhpdaycj
   resolution_hints: {app_id: C6ZZPAPN4YYF5NVJ, name: Anvil Extras, package_name: anvil_extras}
   version: {version_tag: v3.6.1}
-- dep_id: dep_w3p2dmdcyj3qa
-  resolution_hints: {app_id: 5YU7BBT6T5O7ZNOX, name: Anvil Labs, package_name: anvil_labs}
-  version: {branch: master}
+- dep_id: dep_axvyydo8lycarb
+  resolution_hints: {app_id: TGQCF3WT6FVL2EM2, name: Tabulator, package_name: tabulator}
+  version: {version_tag: v3.3.0}
 metadata: {logo_img: 'asset:IMG_0105.webp', title: Pokemania}
 name: Pokemania
 native_deps: {head_html: <link rel="stylesheet" href="_/theme/style.css">}
