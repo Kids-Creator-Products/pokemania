@@ -332,3 +332,4 @@ roles:
 - components: [TextBox, TextArea, DatePicker, DropDown]
   name: input-error
 - {components: null, display_in_toolbox: true, name: card, title: Card}
+- {name: image-poke}

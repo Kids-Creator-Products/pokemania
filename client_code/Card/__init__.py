@@ -16,6 +16,7 @@ class Card(CardTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    self.navigation_link_1.visible=self.navlink
     if False:
       self.data=properties
     else:

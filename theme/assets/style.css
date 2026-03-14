@@ -5,3 +5,10 @@
   max-width: 400px;
   align-content: middle;
 }
+.anvil-role-image-poke {
+  border-style: solid; /* A border style is required */
+  border-color: silver;
+  border-width: 10px;
+  max-width: 400px;
+  align-content: middle;
+}
