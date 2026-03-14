@@ -1,0 +1,9 @@
+components:
+- data_bindings:
+  - {code: 'self.item[''name'']', property: name, writeback: false}
+  layout_properties: {grid_position: 'JMJXDT,ZGFRKR'}
+  name: card_1
+  properties: {name: '', navlink: false}
+  type: form:Card
+container: {type: ColumnPanel}
+is_package: true
