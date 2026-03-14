@@ -15,7 +15,8 @@ class Chat(ChatTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.text_box_1.text='@gmail.com'
+    self.text_box_1.text=''
+    #self.text_box_2.hide_text=True
     self.refresh()
     self.text_box_1
     # Any code you write here will run before the form opens.

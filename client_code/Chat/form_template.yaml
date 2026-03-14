@@ -23,7 +23,7 @@ components:
   type: FlowPanel
 - layout_properties: {slot: title}
   name: text_box_2
-  properties: {placeholder: To…, text: ''}
+  properties: {placeholder: To…, text: '', type: email}
   type: form:dep_72ntb5nseaszb:_Components.TextInput.TextBox
 container:
   properties: {html: '@theme:standard-page.html'}
