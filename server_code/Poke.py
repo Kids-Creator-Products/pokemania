@@ -12,7 +12,7 @@ import anvil.server
 import requests
 import random
 import datetime
-#import Custom
+import Custom
 
 def fixattack(atk):
   y=atk.split('-')
