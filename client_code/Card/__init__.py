@@ -30,4 +30,6 @@ class Card(CardTemplate):
     self.rich_text_1.content="<br/>".join([i.title() for i in self.x['attacks']])
 
     c=PackData.colors[self.x['types'][0].title()]
-    self.background=c
+    self.content_panel.background=c
+    self.heading_1.background_color='white'
+    self.heading_1.text_color=c

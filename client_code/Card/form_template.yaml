@@ -21,7 +21,7 @@ components:
   properties: {bold: true, icon: '', style: title, text_color: White, underline: true}
   type: form:dep_72ntb5nseaszb:_Components.Heading
 container:
-  properties: {html: '@theme:standard-page.html'}
+  properties: {foreground: White, html: '@theme:standard-page.html'}
   type: HtmlTemplate
 custom_component: true
 custom_component_container: false
