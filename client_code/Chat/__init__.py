@@ -17,7 +17,7 @@ class Chat(ChatTemplate):
     self.init_components(**properties)
     if not anvil.users.get_user():
       alert('You must be logged in to use this feature.')
-    self.text_box_1.text=anvil.users.get_user()['fav']
+    self.text_box_2.text=anvil.users.get_user()['fav']
     #self.text_box_2.hide_text=True
     self.refresh()
     self.text_box_1
