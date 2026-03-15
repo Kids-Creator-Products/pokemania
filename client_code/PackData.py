@@ -81,13 +81,13 @@ packs={
   'dolphins':['kyogre','palafin','cetitan','dewgong'],
   'the army':['armarouge','falinks','zacian','zamazenta'],
   'swords and bolts':['doublade','melmetal','meltan','golurk','registeel','klink'],
-  'land animalia':['mankey',"lechonk",'wooper','charmander','squirtle','sandshrew','oranguru','rattata','caterpie','eevee','meowth','growlithe','pidove','pidgeot','empoleon',"stufful"],
+  'land animalia':['mankey',"lechonk",'wooper','charmander','squirtle','sandshrew','oranguru','rattata','caterpie','eevee','meowth','growlithe','pidove','pidgeot','empoleon',"stufful",'farigraf'],
   "dinosaurs":['tyrantrum','bastiodon','aurorus','baxcalibur','archeops','aerodactyl',"lapras"],
   "ice cream":['vanillite','vanillish','vanilluxe',"alcremie",'milcery'],
   'food':['vanillite','dachsbun','smoliv','tatsugiri','slurpuff','appletun','dipplin','sinistcha','scovillain','capsakid','cherubi','hydrapple','polteageist','poltchageist','barraskewda','dolliv','arboliva'],
   'pidove premium':['pidove','pidove'],
   "torchic premium":['torchic','torchic'],
-  "magikarp premium":['magikarp','magikarp']
+  "monkeys and apes":['mankey','primeape','panpour',"aipom",'infernape','annihilape','rillaboom','slaking','oranguru','grookey','thwackey','ambipom','chimchar','monferno',"pansage",'pansear']
 }
 
 def getlastclaim():

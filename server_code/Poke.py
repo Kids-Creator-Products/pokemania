@@ -51,9 +51,16 @@ def getpower(url):
     return str(y.get('power','0'))+'-'+z
   else:
     return ''
+
+evolution={
+  'eevee':["sylveon",'umbreon','espeon','flareon','vaporeon','jolteon','glaceon','leafeon']
+}
+    
 @anvil.server.callable
 def get_next_evolution(pokemon_name):
   # 1. Get species data to find evolution chain URL
+  if pokemon_name in evolution:
+    return random.choice(evolution[pokemon_name])
   species_url = f"https://pokeapi.co/api/v2/pokemon-species/{pokemon_name.lower()}/"
   try:
     species_data = requests.get(species_url).json()
