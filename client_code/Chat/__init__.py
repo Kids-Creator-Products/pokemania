@@ -15,7 +15,9 @@ class Chat(ChatTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.text_box_1.text=''
+    if not anvil.users.get_user():
+      alert('You must be logged in to use this feature.')
+    self.text_box_1.text=anvil.users.get_user()['fav']
     #self.text_box_2.hide_text=True
     self.refresh()
     self.text_box_1
@@ -34,3 +36,9 @@ class Chat(ChatTemplate):
     u=self.text_box_2.text
     Websocket.sendmsg(u,'Chat:'+anvil.users.get_user()['email']+':'+x)
     self.refresh()
+
+  @handle("text_box_2", "change")
+  def text_box_2_change(self, **event_args):
+    """This method is called when the text in this component is edited."""
+    x=self.text_box_2.text
+    anvil.users.get_user()['fav']=x

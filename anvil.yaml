@@ -80,6 +80,10 @@ db_schema:
       client_hidden: false
       name: msg
       type: simpleObject
+    - admin_ui: {order: 15, width: 200}
+      client_hidden: false
+      name: fav
+      type: string
     server: full
     title: Users
 dependencies:
