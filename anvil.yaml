@@ -131,8 +131,58 @@ services:
           <p>This link will expire in ten minutes.</p>
     user_table: users
   source: /runtime/services/anvil/users.yml
-- client_config: {}
-  server_config: {app_origin_redirect: false, client_id: ''}
+- client_config:
+    app_files:
+    - alternateLink: https://docs.google.com/spreadsheets/d/1mMfZul1uFmetEfK8X2R1WscM1i_qGz48zu3qFy_6qCY/edit?usp=drivesdk
+      appDataContents: false
+      capabilities: {canCopy: true, canEdit: true}
+      copyRequiresWriterPermission: false
+      copyable: true
+      createdDate: '2026-03-21T16:56:47.517Z'
+      editable: true
+      embedLink: https://docs.google.com/spreadsheets/d/1mMfZul1uFmetEfK8X2R1WscM1i_qGz48zu3qFy_6qCY/htmlembed?ouid=114004113020024146565
+      etag: '"MTc3NDExMjIyNDc5Nw"'
+      explicitlyTrashed: false
+      exportLinks: {application/pdf: 'https://docs.google.com/spreadsheets/export?id=1mMfZul1uFmetEfK8X2R1WscM1i_qGz48zu3qFy_6qCY&exportFormat=pdf', application/vnd.oasis.opendocument.spreadsheet: 'https://docs.google.com/spreadsheets/export?id=1mMfZul1uFmetEfK8X2R1WscM1i_qGz48zu3qFy_6qCY&exportFormat=ods', application/vnd.openxmlformats-officedocument.spreadsheetml.sheet: 'https://docs.google.com/spreadsheets/export?id=1mMfZul1uFmetEfK8X2R1WscM1i_qGz48zu3qFy_6qCY&exportFormat=xlsx', application/x-vnd.oasis.opendocument.spreadsheet: 'https://docs.google.com/spreadsheets/export?id=1mMfZul1uFmetEfK8X2R1WscM1i_qGz48zu3qFy_6qCY&exportFormat=ods', application/zip: 'https://docs.google.com/spreadsheets/export?id=1mMfZul1uFmetEfK8X2R1WscM1i_qGz48zu3qFy_6qCY&exportFormat=zip', text/csv: 'https://docs.google.com/spreadsheets/export?id=1mMfZul1uFmetEfK8X2R1WscM1i_qGz48zu3qFy_6qCY&exportFormat=csv', text/tab-separated-values: 'https://docs.google.com/spreadsheets/export?id=1mMfZul1uFmetEfK8X2R1WscM1i_qGz48zu3qFy_6qCY&exportFormat=tsv'}
+      fileSize: '1024'
+      iconLink: https://drive-thirdparty.googleusercontent.com/16/type/application/vnd.google-apps.spreadsheet
+      id: 1mMfZul1uFmetEfK8X2R1WscM1i_qGz48zu3qFy_6qCY
+      kind: drive#file
+      labels: {hidden: false, restricted: false, starred: false, trashed: false, viewed: true}
+      lastModifyingUser:
+        displayName: Leo
+        emailAddress: laamarasingham@gmail.com
+        isAuthenticatedUser: true
+        kind: drive#user
+        permissionId: '11578650631272588515'
+        picture: {url: 'https://lh3.googleusercontent.com/a-/ALV-UjVSfcy61aNsPI9sqdsy4ISkuXjGAuEVlijjJm9xoGMM4vtDbIPR70YNdTmG34EnZ7XTMNBYABjTkwRVix61qwSybiw5X7iB15jLipZ1rHuKMaCFeoW2r9JH1s7L8gBi6iWpWNQfvsCSsfXacQB_mZ-tdqlI6T4l8wxwftb1Mp4PIIbFPs1pXZduSydq0obU0tdtc9r8KpXrAy4SLggqcHTCgOhk3wMtvHenbSicd98D3VXH0Kw_sOBy7nuDMOHNQdmOyuwsDp_rOuQ_zRqOgLRo8PYxaGQWokD4EK3iJtnvsxq67IDMu0iwA6rA5WSzOUXCypKiUCiDYp5Ywtd4SLRtzCpmLb07Be5Nh1WLIBnUO4oTUURUSijWKHKfmPlFBZJfjlOoEF_F1N-pipEjWaC_vJOcXFpL8juDP3h43S0XcwYvEBLnBmYhWA7rZJCEhzuE2nCZ_xfIl1wyS4wV6jpea3En4fSl0KJgC7nmBoDPx9EO02P8H1UCd7k2CeToFfeGpPQNQvm-VuNhUwb2HrT7Pa-rF9I8430JUznSnXNB3I25Kh6VwujXqFpI_IgmoQrOy4aeko_jc6grJHmOe5OaNEtatAAPvQWdtVNDID5LIWhrUat4pps7XaRt9GL5CQC6PlPnaN9lWR0jQY3QAlKzcydhtE42I2EsjHEMhb6IpRUH_kqXCLbIrw3EWaEycHF55VpGTRqSz5YC3oJmb0kFwn5c0I0l8mfjIJMo6Z09_mvm_TfNV_vqhguqyjqG7FeVVSQrQm95fB3k_tpJfSzSWigfEnM4NomnSwcOyyGXCQsXZ4a8cHdLAh09QXqpI_Ng0sXMmFdRUpGYkdPuIaTCBA5JrDRiaP4MZsUhqTKAATsQmHoNXq5vHNyENqE8nHXnxSPeMHBnQat3AZlot_MQ3xQmK1wTxmlkGAV-LLEJMukeWeVox0aFYL5ZCsHGuIARtqCKfxGrdKgUcvlV6Gag1exsk8MdGCGR2Zr51ffZjDcIc95dOU8cKeePdfXkwqR1O5Jmb9bxk2RAj52aOE-5in2hAIC9tfasZi-GXYn7JwOM1xPe7RC0=s64'}
+      lastModifyingUserName: Leo
+      lastViewedByMeDate: '2026-03-21T16:57:04.797Z'
+      markedViewedByMeDate: '1970-01-01T00:00:00.000Z'
+      mimeType: application/vnd.google-apps.spreadsheet
+      modifiedByMeDate: '2026-03-21T16:57:04.797Z'
+      modifiedDate: '2026-03-21T16:57:04.797Z'
+      ownerNames: [Leo]
+      owners:
+      - displayName: Leo
+        emailAddress: laamarasingham@gmail.com
+        isAuthenticatedUser: true
+        kind: drive#user
+        permissionId: '11578650631272588515'
+        picture: {url: 'https://lh3.googleusercontent.com/a-/ALV-UjVSfcy61aNsPI9sqdsy4ISkuXjGAuEVlijjJm9xoGMM4vtDbIPR70YNdTmG34EnZ7XTMNBYABjTkwRVix61qwSybiw5X7iB15jLipZ1rHuKMaCFeoW2r9JH1s7L8gBi6iWpWNQfvsCSsfXacQB_mZ-tdqlI6T4l8wxwftb1Mp4PIIbFPs1pXZduSydq0obU0tdtc9r8KpXrAy4SLggqcHTCgOhk3wMtvHenbSicd98D3VXH0Kw_sOBy7nuDMOHNQdmOyuwsDp_rOuQ_zRqOgLRo8PYxaGQWokD4EK3iJtnvsxq67IDMu0iwA6rA5WSzOUXCypKiUCiDYp5Ywtd4SLRtzCpmLb07Be5Nh1WLIBnUO4oTUURUSijWKHKfmPlFBZJfjlOoEF_F1N-pipEjWaC_vJOcXFpL8juDP3h43S0XcwYvEBLnBmYhWA7rZJCEhzuE2nCZ_xfIl1wyS4wV6jpea3En4fSl0KJgC7nmBoDPx9EO02P8H1UCd7k2CeToFfeGpPQNQvm-VuNhUwb2HrT7Pa-rF9I8430JUznSnXNB3I25Kh6VwujXqFpI_IgmoQrOy4aeko_jc6grJHmOe5OaNEtatAAPvQWdtVNDID5LIWhrUat4pps7XaRt9GL5CQC6PlPnaN9lWR0jQY3QAlKzcydhtE42I2EsjHEMhb6IpRUH_kqXCLbIrw3EWaEycHF55VpGTRqSz5YC3oJmb0kFwn5c0I0l8mfjIJMo6Z09_mvm_TfNV_vqhguqyjqG7FeVVSQrQm95fB3k_tpJfSzSWigfEnM4NomnSwcOyyGXCQsXZ4a8cHdLAh09QXqpI_Ng0sXMmFdRUpGYkdPuIaTCBA5JrDRiaP4MZsUhqTKAATsQmHoNXq5vHNyENqE8nHXnxSPeMHBnQat3AZlot_MQ3xQmK1wTxmlkGAV-LLEJMukeWeVox0aFYL5ZCsHGuIARtqCKfxGrdKgUcvlV6Gag1exsk8MdGCGR2Zr51ffZjDcIc95dOU8cKeePdfXkwqR1O5Jmb9bxk2RAj52aOE-5in2hAIC9tfasZi-GXYn7JwOM1xPe7RC0=s64'}
+      parents:
+      - {id: 0AERcIohddWzGUk9PVA, isRoot: true, kind: drive#parentReference, parentLink: 'https://www.googleapis.com/drive/v2/files/0AERcIohddWzGUk9PVA', selfLink: 'https://www.googleapis.com/drive/v2/files/1mMfZul1uFmetEfK8X2R1WscM1i_qGz48zu3qFy_6qCY/parents/0AERcIohddWzGUk9PVA'}
+      permission: rwclient
+      python_name: users
+      quotaBytesUsed: '1024'
+      selfLink: https://www.googleapis.com/drive/v2/files/1mMfZul1uFmetEfK8X2R1WscM1i_qGz48zu3qFy_6qCY
+      shared: false
+      spaces: [drive]
+      title: Anvil Users
+      userPermission: {etag: '"mol2CqSO9m4TT1KzzAPjuBnI7Tg"', id: me, kind: drive#permission, pendingOwner: false, role: owner, selfLink: 'https://www.googleapis.com/drive/v2/files/1mMfZul1uFmetEfK8X2R1WscM1i_qGz48zu3qFy_6qCY/permissions/me', type: user}
+      version: '6'
+      writersCanShare: true
+  server_config: {app_origin_redirect: false, client_id: '', enc_delegation_refresh_token: /L1/nHhBEtG2+C63+jgENxP0g6elb5RsIpbDL7gs5y7Ckb6pyraKwrANNlLrt7Y8lxz6/cHPJPgN6zDevb5J3Zp9+ai5yPDe+GZdioEJe+ylBS+umcBWQpNmv3egVUVtMWuBhL/7xK1aJcO4WPapF+yH0t0fTPrkwLlegu5TPaEIwtbvbBfh1a5vsOj6qtA4fPotY0DBAgRuYzJR7goi17MDsJGYVemmvpHfgjdXmBnGdfS3RjVreMl3mO/u01kLTvuGylJ1Xl3vqenSru6/YdWzJb8ZFq5qWuauClObAovTdThMI5BVaIVgudc6RQ==}
   source: /runtime/services/google.yml
 - client_config: {}
   server_config: {}
