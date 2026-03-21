@@ -41,7 +41,7 @@ def backusr(usr_email):
   existing_row = db.get(email=usr_email)
 
   # 4. Prepare data (converting to string as you did)
-  x
+  x=['email','Cards','fav','Offer','For','msg']
   user_data = {k: str(user[k]) for k in x}
 
   if existing_row:
