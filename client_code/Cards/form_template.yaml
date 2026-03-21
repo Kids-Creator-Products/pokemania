@@ -62,6 +62,10 @@ components:
     name: navigation_link_1
     properties: {badge: false, badge_count: null, icon: 'mi:package_2', navigate_to: Cards.Packs, selected: false, text: Packs}
     type: form:dep_72ntb5nseaszb:_Components.NavigationLink
+  - layout_properties: {}
+    name: navigation_link_3
+    properties: {icon: 'mi:apps', navigate_to: App, text: Apps}
+    type: form:dep_72ntb5nseaszb:_Components.NavigationLink
   layout_properties: {slot: left-nav}
   name: flow_panel_1
   properties: {}

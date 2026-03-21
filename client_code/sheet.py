@@ -18,11 +18,11 @@ def getusrs():
   return app_files.users['usr'].rows
 def backusr(usr):
   db=app_files.users['usr']
-  for i in getusrs():
+  for i in db.rows:
     if i['email']==usr:
       i.delete()
-  d=app_tables.users.get(email=usr)
+  d=anvil.users.get_user()
   x={}
   for k in d:
-    x[k]=d[k]
+    x[k]=str(d[k])
   db.add_row(x)
