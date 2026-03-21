@@ -11,6 +11,7 @@
       rgba(255, 255, 255, 0) 
   );
 }
+.anvil-role-card-info { font-weight: bold; font-size: 1.2rem; text-transform: uppercase; }
 .anvil-role-image-poke {
   border-style: solid; /* A border style is required */
   border-color: lightsteelblue;
@@ -30,6 +31,8 @@
 .anvil-role-card {
   perspective: 1000px; /* Essential for 3D depth */
   transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 .anvil-role-card:hover {
