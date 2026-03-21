@@ -3,7 +3,12 @@ components:
   - event_bindings: {}
     layout_properties: {grid_position: 'OPHYZK,XLWOKS'}
     name: button_1
-    properties: {text: Back up}
+    properties: {icon: 'mi:file_upload', text: Write Save Data}
+    type: form:dep_72ntb5nseaszb:_Components.Button
+  - event_bindings: {}
+    layout_properties: {grid_position: 'GGCGDG,ZXRPJO'}
+    name: button_2
+    properties: {icon: 'mi:download', text: Load Save Data}
     type: form:dep_72ntb5nseaszb:_Components.Button
   layout_properties: {slot: default}
   name: content_panel

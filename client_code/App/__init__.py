@@ -22,3 +22,8 @@ class App(AppTemplate):
   def button_1_click(self, **event_args):
     """This method is called when the component is clicked."""
     sheet.backusr(anvil.users.get_user()['email'])
+
+  @handle("button_2", "click")
+  def button_2_click(self, **event_args):
+    """This method is called when the component is clicked."""
+    sheet.reload_sheet()

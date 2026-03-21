@@ -39,9 +39,7 @@ def backusr(usr_email):
 
   # 3. Look for an existing record
   try:
-    for i in db.rows:
-      if i['email']==user['email']:
-        i.delete()
+    db.list_rows(email=anvil.users.get_user()['email'])[0].delete()
   except:
     pass
 
@@ -50,5 +48,17 @@ def backusr(usr_email):
   user_data = {k: str(user[k]) for k in x}
 
   db.add_row(**user_data)
+def fixtype(v):
+  try:
+    return eval(v)
+  except:
+    return v
 def reload_sheet():
-  
+  try:
+    x=app_files.users['usr'].list_rows(email=anvil.users.get_user()['email'])[0]
+  except:
+    return
+  for k in x:
+    if k!='email':
+      v=x[k]
+      anvil.users.get_user()[k]=fixtype(v)
