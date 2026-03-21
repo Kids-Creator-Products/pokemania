@@ -35,16 +35,15 @@ def backusr(usr_email):
     return "No user logged in"
 
     # 2. Reference your storage table
-  db = app_tables.users # Assuming 'users' is an Anvil Data Table
+  db = app_files.users['usr'] #Assuming 'users' is an Anvil Data Table
 
   # 3. Look for an existing record
-  existing_row = db.get(email=usr_email)
+  for i in db.rows:
+    if i['email']=user['email']:
+      i.delete()
 
   # 4. Prepare data (converting to string as you did)
   x=['email','Cards','fav','Offer','For','msg']
   user_data = {k: str(user[k]) for k in x}
 
-  if existing_row:
-    existing_row.update(**user_data)
-  else:
-    db.add_row(**user_data)
+  db.add_row(**user_data)
