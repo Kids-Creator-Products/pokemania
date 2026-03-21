@@ -23,7 +23,7 @@ class Card(CardTemplate):
     self.n=self.data['name']
     if self.name and self.name!='':
       self.n=self.name
-    self.x=anvil.server.call('get_pokemon_details',self.n)
+    self.x=anvil.server.call_s('get_pokemon_details',self.n)
     # Any code you write here will run before the form opens.
     self.heading_1.text=self.x['name']+'      '+str(self.x['health'])+' HP              '+self.x['types'][0]
     self.image_1.source=self.x["image"]
@@ -32,6 +32,7 @@ class Card(CardTemplate):
       self.img=Image(source=PackData.gtype(self.x['types'][0]),display_mode='shrink_to_fit')
       self.img.height=28
       self.img.width=28
+      self.img.horizontal_align='right'
       self.heading_1.add_component(self.img)
     except:
       pass
