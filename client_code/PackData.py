@@ -185,3 +185,6 @@ def get_random_pokemon_from_region(region_name, count=2):
 
   return result
 """
+
+def gtype(x):
+  return 'https://raw.githubusercontent.com/partywhale/pokemon-type-icons/refs/heads/main/icons/'+x+'.svg'

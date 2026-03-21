@@ -28,7 +28,13 @@ class Card(CardTemplate):
     self.heading_1.text=self.x['name']+'      '+str(self.x['health'])+' HP              '+self.x['types'][0]
     self.image_1.source=self.x["image"]
     self.rich_text_1.content="<br/>".join([i.title() for i in self.x['attacks']])
-
+    try:
+      self.img=Image(source=PackData.gtype(self.x['types'][0]),display_mode='shrink_to_fit')
+      self.img.height=28
+      self.img.width=28
+      self.heading_1.add_component(self.img)
+    except:
+      pass
     c=PackData.colors[self.x['types'][0].title()]
     self.content_panel.background=c
     self.heading_1.background_color=c
