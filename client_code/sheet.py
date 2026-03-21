@@ -21,4 +21,5 @@ def backusr(usr):
   x=None
   for i in getusrs():
     if i['email']==usr:
+      x=i
       
