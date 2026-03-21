@@ -52,3 +52,35 @@
   }
 }
 /* Update your card hover state to include this */
+.anvil-role-card-stats {
+  /* Set a large font size and bold weight for better visibility */
+  font-weight: bold;
+  text-align: center;
+  /* Define the gradient background, starting and ending with the main text color 
+  and a bright "shine" color in the middle */
+  background: linear-gradient(
+    90deg,
+    #ddd 0%,
+    #fff 50%,
+    #ddd 100%
+  ); /* Adjust colors as needed */
+  background-size: 200% 100%; /* Make the background wider than the text container */
+  /* Clip the background to the text shape */
+  -webkit-background-clip: text;
+  background-clip: text;
+  /* Make the text color transparent so only the clipped background is visible */
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  /* Apply the animation */
+  animation: shine 3s linear infinite; /* Adjust duration and timing as needed */
+}
+
+/* Define the keyframes for the animation */
+@keyframes shine {
+  0% {
+    background-position: 100% 0; /* Start position (right side of oversized background) */
+  }
+  100% {
+    background-position: -100% 0; /* End position (left side of oversized background) */
+  }
+}

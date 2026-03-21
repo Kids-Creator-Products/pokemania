@@ -13,7 +13,7 @@ components:
     type: Image
   - layout_properties: {full_width_row: false, grid_position: 'PVGUOH,UGFDFB'}
     name: rich_text_1
-    properties: {format: restricted_html, role: null}
+    properties: {content: '', format: restricted_html, role: card-stats}
     type: RichText
   layout_properties: {slot: default}
   name: content_panel
