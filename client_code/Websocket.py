@@ -36,7 +36,7 @@ def trade(usr=None):
     x=app_tables.users.get(email=usr)
     if not x:
       return
-  if random.randint(1,3)==2:
+  if random.randint(1,3)==2 or usr:
     try:
       if x['Offer'] in anvil.users.get_user()['Cards']:
         switch(x['Offer'],x['For'])
@@ -59,7 +59,7 @@ def sendmsg(usr,msg):
   d=d['msg']
   if not d:
     d=[]
-  if 'trade' in msg and 'Chat:'+usr+':trade' in msg']:
+  if 'trade' in msg and 'Chat:'+usr+':trade' in getmsg():
     trade(usr)
   d.append(msg)
   return True
