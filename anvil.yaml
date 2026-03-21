@@ -98,7 +98,10 @@ dependencies:
   version: {version_tag: v3.3.0}
 metadata: {logo_img: 'asset:IMG_0105.webp', title: Pokemania}
 name: Pokemania
-native_deps: {head_html: <link rel="stylesheet" href="_/theme/style.css">}
+native_deps:
+  head_html: |-
+    <link rel="stylesheet" href="_/theme/style.css">
+    <link rel="stylesheet" href="_/theme/glitter.css">
 package_name: Poke
 renamed: true
 runtime_options:

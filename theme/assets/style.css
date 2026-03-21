@@ -65,3 +65,26 @@
   opacity: 1;
   background-position: 100% 100%; /* Moves the shimmer as you hover */
 }
+/* Container for the glitter dots */
+
+/* Enhancing the rainbow shine for a 'Rainbow Rare' feel */
+.anvil-role-card:hover::after {
+  background: linear-gradient(
+    125deg,
+    rgba(255, 0, 0, 0.2),
+    rgba(255, 255, 0, 0.2),
+    rgba(0, 255, 0, 0.2),
+    rgba(0, 255, 255, 0.2),
+    rgba(0, 0, 255, 0.2),
+    rgba(255, 0, 255, 0.2)
+  );
+  background-size: 400% 400%;
+  animation: rainbow-shift 3s ease infinite;
+  mix-blend-mode: color-dodge; /* Crucial for that metallic glow */
+}
+
+@keyframes rainbow-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

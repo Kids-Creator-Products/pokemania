@@ -1,0 +1,55 @@
+.anvil-role-card {
+  width: 300px;
+  height: 420px;
+  background-color: #f8d030;
+  border: 12px solid #e0c068;
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+
+  /* The Secret Sauce: Multiple background layers */
+  /* Layer 1: The Base Color | Layer 2: The Glitter Pattern */
+  background-image: 
+    linear-gradient(to bottom, rgba(255,255,255,0.2), transparent),
+    radial-gradient(circle, white 1px, transparent 1px);
+  background-size: 100% 100%, 25px 25px; /* Tiles the dots every 25px */
+}
+
+/* We use the ::after pseudo-element for the holographic overlay */
+.anvil-role-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s;
+
+  /* Rainbow Shine + Glitter Sparkle */
+  background-image: 
+    linear-gradient(125deg, 
+                    rgba(255,0,0,0.1) 0%, rgba(0,255,0,0.1) 50%, rgba(0,0,255,0.1) 100%),
+    radial-gradient(circle, #fff 1px, transparent 1.5px);
+  background-size: 400% 400%, 15px 15px;
+  mix-blend-mode: screen;
+}
+
+/* On hover: Show the glitter and animate it */
+.anvil-role-card:hover {
+  transform: translateY(-10px) rotateX(5deg);
+}
+
+.anvil-role-card:hover::after {
+  opacity: 1;
+  animation: glitter-move 4s linear infinite;
+}
+
+@keyframes glitter-move {
+  0% { 
+    background-position: 0% 0%, 0px 0px; 
+  }
+  100% { 
+    /* Moving the background-position makes the "dots" shimmer */
+    background-position: 100% 100%, 45px 45px; 
+  }
+}
