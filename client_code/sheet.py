@@ -17,9 +17,12 @@ from anvil.tables import app_tables
 def getusrs():
   return app_files.users['usr'].rows
 def backusr(usr):
-  db=app_files.user['usr']
-  x=None
+  db=app_files.users['usr']
   for i in getusrs():
     if i['email']==usr:
-      x=i
-      
+      i.delete()
+  d=app_tables.users.get(email=usr)
+  x={}
+  for k in d:
+    x[k]=d[k]
+  db.add_row(x)

@@ -52,15 +52,20 @@ components:
   name: navbar_links
   properties: {}
   type: FlowPanel
-- layout_properties: {slot: left-nav}
-  name: navigation_link_1
-  properties: {badge: false, badge_count: null, icon: 'mi:package_2', navigate_to: Cards.Packs, selected: false, text: Packs}
-  type: form:dep_72ntb5nseaszb:_Components.NavigationLink
 - event_bindings: {}
   layout_properties: {slot: title}
   name: button_2
   properties: {text: Sign up/log in}
   type: form:dep_72ntb5nseaszb:_Components.Button
+- components:
+  - layout_properties: {}
+    name: navigation_link_1
+    properties: {badge: false, badge_count: null, icon: 'mi:package_2', navigate_to: Cards.Packs, selected: false, text: Packs}
+    type: form:dep_72ntb5nseaszb:_Components.NavigationLink
+  layout_properties: {slot: left-nav}
+  name: flow_panel_1
+  properties: {}
+  type: FlowPanel
 container:
   properties: {html: '@theme:standard-page.html'}
   type: HtmlTemplate
