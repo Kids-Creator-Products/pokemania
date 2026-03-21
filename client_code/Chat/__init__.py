@@ -28,7 +28,7 @@ class Chat(ChatTemplate):
     for i in x:
       if i[:5]=='Chat:':
         y.append(i[5:])
-    self.rich_text_1.content='\n'.join(y)
+    self.rich_text_1.content='Text trade to trade cards.\n'.join(y)
   @handle("button_1", "click")
   def button_1_click(self, **event_args):
     """This method is called when the component is clicked."""

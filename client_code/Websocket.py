@@ -30,11 +30,16 @@ def switch(w,y):
   anvil.server.call_s('addCard',y)
   setoffer(None,None)
 
-def trade():
+def trade(usr=None):
   x=anvil.users.get_user()
+  if usr:
+    x=app_tables.users.get(email=usr)
+    if not x:
+      return
   if random.randint(1,3)==2:
     try:
-      switch(x['Offer'],x['For'])
+      if x['Offer'] in anvil.users.get_user()['Cards']:
+        switch(x['Offer'],x['For'])
     except:
       pass
 
@@ -54,5 +59,7 @@ def sendmsg(usr,msg):
   d=d['msg']
   if not d:
     d=[]
+  if 'trade' in msg and 'Chat:'+usr+':trade' in msg']:
+    trade(usr)
   d.append(msg)
   return True
