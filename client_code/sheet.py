@@ -38,12 +38,17 @@ def backusr(usr_email):
   db = app_files.users['usr'] #Assuming 'users' is an Anvil Data Table
 
   # 3. Look for an existing record
-  for i in db.rows:
-    if i['email']=user['email']:
-      i.delete()
+  try:
+    for i in db.rows:
+      if i['email']==user['email']:
+        i.delete()
+  except:
+    pass
 
   # 4. Prepare data (converting to string as you did)
   x=['email','Cards','fav','Offer','For','msg']
   user_data = {k: str(user[k]) for k in x}
 
   db.add_row(**user_data)
+def reload_sheet():
+  
