@@ -27,3 +27,38 @@
 .anvil-role-card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
+.anvil-role-card {
+  perspective: 1000px; /* Essential for 3D depth */
+  transition: transform 0.5s ease;
+}
+
+.anvil-role-card:hover {
+  /* Tilts the card toward the cursor */
+  transform: rotateY(15deg) rotateX(10deg);
+}
+.anvil-role-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0;
+
+  /* Creates the diagonal rainbow spectrum */
+  background: linear-gradient(
+    115deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.5) 30%,
+    rgba(0, 255, 255, 0.2) 45%,
+    rgba(255, 0, 255, 0.2) 55%,
+    transparent 80%
+  );
+  background-size: 200% 200%;
+  mix-blend-mode: color-dodge; /* Makes colors pop against the art */
+  transition: opacity 0.3s, background-position 0.3s;
+}
+
+.anvil-role-card:hover::before {
+  opacity: 1;
+  background-position: 100% 100%; /* Moves the shimmer as you hover */
+}

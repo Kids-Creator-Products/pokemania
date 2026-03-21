@@ -205,7 +205,7 @@ def get_pokemon_details(name):
         hp=base_hp
     return {
       'api_url': api_url,
-      'name': data['name'].capitalize(),
+      'name': data['name'].replace('-',' ').title(),
       'image': data['sprites']['front_default'],
       # Extract names from the 'moves' list
       'attacks': [fixattack(m['move']['name'].replace('-', ' ').title()+'-'+getpower(m['move']['url'])) for m in data['moves'][:8]],
