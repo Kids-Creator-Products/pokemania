@@ -246,3 +246,7 @@ def card(n):
 @anvil.server.route('/battle/:c/:o')
 def battle(c,o):
   return anvil.server.AppResponder(data={'battle':c,'bad':o}).load_form('Battle')
+
+@anvil.server.callable
+def get(x):
+  return requests.get(x).text
