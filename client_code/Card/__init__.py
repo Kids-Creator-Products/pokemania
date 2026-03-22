@@ -10,6 +10,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 from .. import PackData
+import anvil.js
 
 class Card(CardTemplate):
   def __init__(self, **properties):
@@ -41,3 +42,9 @@ class Card(CardTemplate):
     self.heading_1.background_color=c
     self.image_1.background=c
     self.heading_1.text_color='white'
+
+  @handle("image_1", "mouse_enter")
+  def image_1_mouse_enter(self, x, y, **event_args):
+    """This method is called when the mouse cursor enters this component"""
+    x=anvil.js.window.Audio('https://raw.githubusercontent.com/StrangeOne101/PixelTweaks/refs/heads/3.0/src/main/resources/assets/pixeltweaks/sounds/sparkle.ogg')
+    x.play()
