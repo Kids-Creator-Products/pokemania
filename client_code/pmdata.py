@@ -6,7 +6,7 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
-import 
+import anvil.http
 # This is a module.
 # You can define variables and functions here, and use them from any form. For example, in a top-level form:
 #
@@ -19,4 +19,6 @@ class Request(object):
   def get(self,x):
     return anvil.server.call_s('get',x)
   def img(self,x):
-    return
+    return anvil.http.request(x)
+  def file(self,x):
+    return 'https://raw.githubusercontent.com/Kids-Creator-Products/projects-data/refs/heads/main/pokemania/'+x
