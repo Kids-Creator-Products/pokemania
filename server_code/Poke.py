@@ -39,8 +39,9 @@ def get_pokemon_ids(name):
     return f"Error fetching data: {e}"
 
 # Example for Charizard (includes Mega X, Mega Y, and Gmax/VMAX)
-#pokemon_name = "charizard"
-#ids = get_pokemon_ids(pokemon_name)
+pokemon_name = "charizard"
+ids = get_pokemon_ids(pokemon_name)
+print(ids)
 
 
 def fixattack(atk):
@@ -214,6 +215,9 @@ def search_tree(node, target):
 @anvil.server.callable
 def get_pokemon_details(name):
   # Full API endpoint URL for this specific Pokémon
+  if name.endswith('max') or name.endswith('x') or name.endswith('y'):
+    ids=get_pokemon_ids('-'.join(name.split('-')[:-1]))
+    name=str(ids[name])
   """if False:
     customs=requests.get('https://raw.githubusercontent.com/cool-guys-bfc2/custom-pokemon/refs/heads/main/cards/cards.json').json()
     if name+'.json' in customs:
@@ -242,10 +246,7 @@ def get_pokemon_details(name):
       'health':hp,
       'sound':data['cries'].get('latest','')
     }
-  try:
-    ids=get_pokemon_ids(name)
-  except:
-    return None
+  return None
   
 @anvil.server.callable
 def addCard(rn):
