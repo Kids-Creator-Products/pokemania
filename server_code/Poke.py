@@ -39,7 +39,7 @@ def get_pokemon_ids(name):
     return f"Error fetching data: {e}"
 
 # Example for Charizard (includes Mega X, Mega Y, and Gmax/VMAX)
-pokemon_name = "charizard"
+pokemon_name = "kyogre"
 ids = get_pokemon_ids(pokemon_name)
 print(ids)
 
