@@ -14,6 +14,35 @@ import random
 import datetime
 import Custom
 
+def get_pokemon_ids(name):
+  # PokéAPI uses 'species' to group all variants (Mega, Gmax, etc.)
+  url = f"https://pokeapi.co/api/v2/pokemon-species/{name.lower()}/"
+
+  try:
+    response = requests.get(url)
+    response.raise_for_status()
+    data = response.json()
+
+    # 'varieties' contains the specific IDs for each form
+    varieties = data.get('varieties', [])
+
+    results = {}
+    for v in varieties:
+      v_name = v['pokemon']['name']
+      # The ID is the last numeric part of the URL
+      v_id = v['pokemon']['url'].strip('/').split('/')[-1]
+      results[v_name] = v_id
+
+    return results
+
+  except requests.exceptions.RequestException as e:
+    return f"Error fetching data: {e}"
+
+# Example for Charizard (includes Mega X, Mega Y, and Gmax/VMAX)
+#pokemon_name = "charizard"
+#ids = get_pokemon_ids(pokemon_name)
+
+
 def fixattack(atk):
   y=atk.split('-')
   if 'none' in atk.lower():
@@ -213,7 +242,10 @@ def get_pokemon_details(name):
       'health':hp,
       'sound':data['cries'].get('latest','')
     }
-  return None
+  try:
+    ids=get_pokemon_ids(name)
+  except:
+    return None
   
 @anvil.server.callable
 def addCard(rn):
