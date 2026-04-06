@@ -14,6 +14,7 @@ import random
 import datetime
 import Custom
 
+@anvil.server.callable
 def get_pokemon_ids(name):
   # PokéAPI uses 'species' to group all variants (Mega, Gmax, etc.)
   url = f"https://pokeapi.co/api/v2/pokemon-species/{name.lower()}/"
