@@ -76,7 +76,7 @@ packs={
   'water':['squirtle','wartortle','blastoise','psyduck','cloyster','gyrados','vaporeon','suicune','kingdra','palkia','lapras','greninja','kyogre','shapedo',"wooper"],
   'mighty dragons':['rayquaza',"dragonite",'garchomp','altaria','flygon','dragonair','charizard'],
   'magical':['sylveon','murkrow','marshadow','mew','mewtwo','malamar','umbreon','espeon','natu','xatu','honchkrow','houndour','houndoom','hypno','drowzee',"rapidash",'meowth',"purrloin",'slowpoke','baltoy'],
-  'icy wonderland':['snorunt','glaceon','cloyster','lapras','dewgong','beartic','snom','spheal','abomasnow','sealeo','kyogre'],
+  'icy wonderland':['snorunt','glaceon','cloyster','lapras','dewgong','beartic','snom','spheal','abomasnow','sealeo','kyogre','bergmite'],
   'whales':['dewgong','kyogre','wailord','wailmer','cetitan'],
   'dolphins':['kyogre','palafin','cetitan','dewgong'],
   'the army':['armarouge','falinks','zacian','zamazenta'],
@@ -87,7 +87,9 @@ packs={
   'food':['vanillite','dachsbun','smoliv','tatsugiri','slurpuff','appletun','dipplin','sinistcha','scovillain','capsakid','cherubi','hydrapple','polteageist','poltchageist','barraskewda','dolliv','arboliva'],
   'pidove premium':['pidove','pidove'],
   "torchic premium":['torchic','torchic'],
-  "monkeys and apes":['mankey','primeape','panpour',"aipom",'infernape','annihilape','rillaboom','slaking','oranguru','grookey','thwackey','ambipom','chimchar','monferno',"pansage",'pansear']
+  "monkeys and apes":['mankey','primeape','panpour',"aipom",'infernape','annihilape','rillaboom','slaking','oranguru','grookey','thwackey','ambipom','chimchar','monferno',"pansage",'pansear'],
+  "icy wonderalnd":['dewgong','beartic','arctozolt','snorunt','walrein','frosmoth','glalie','vanilluxe','cetitan','mamoswine',"glaceon","spheal",'cetoddle','piloswine'],
+  'piplup premium':['piplup','piplup']
 }
 
 def getlastclaim():
