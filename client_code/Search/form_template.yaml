@@ -13,6 +13,10 @@ components:
     name: rich_text_1
     properties: {content: '', format: plain_text, tooltip: Search results here}
     type: RichText
+  - layout_properties: {grid_position: 'DLHDKN,OINIDH'}
+    name: repeating_panel_1
+    properties: {item_template: Search.ItemTemplate2}
+    type: RepeatingPanel
   layout_properties: {slot: default}
   name: content_panel
   properties: {}

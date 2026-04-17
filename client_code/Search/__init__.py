@@ -27,6 +27,7 @@ class Search(SearchTemplate):
     except:
       t='This is not a valid pokemon...'
       return
+    self.repeating_panel_1.items=[]
     for k in x:
       t+='\n'+k
       v=x[k]
@@ -36,4 +37,5 @@ class Search(SearchTemplate):
       c.add_event_handler('click',e)
       e=None
       self.content_panel.add_component(c)
+      self.repeating_panel_1.items.append({"val":v})
     self.rich_text_1.content=t
