@@ -274,7 +274,7 @@ def cards():
 
 @anvil.server.route("/search")
 def search():
-  return anvil.server.FormResponse('Cards')
+  return anvil.server.FormResponse('Search')
 
 #@anvil.server.route('/card/:n')
 def card(n):
