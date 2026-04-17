@@ -34,6 +34,6 @@ class Search(SearchTemplate):
       def e(**kwargs):
         return anvil.open_form("Card",name=str(v))
       c.add_event_handler('click',e)
+      e=None
       self.content_panel.add_component(c)
     self.rich_text_1.content=t
-    
