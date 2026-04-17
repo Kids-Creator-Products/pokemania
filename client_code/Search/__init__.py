@@ -27,7 +27,7 @@ class Search(SearchTemplate):
     except:
       t='This is not a valid pokemon...'
       return
-    self.repeating_panel_1.items=[]
+    i=[]
     for k in x:
       t+='\n'+k
       v=x[k]
