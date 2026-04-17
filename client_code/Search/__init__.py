@@ -36,5 +36,6 @@ class Search(SearchTemplate):
         return anvil.open_form("Card",name=str(v))
       c.add_event_handler('click',e)
       e=None
-      self.repeating_panel_1.items.append({"val":v})
+      i.append({"val":v})
+    self.repeating_panel_1.items=i
     self.rich_text_1.content=t
