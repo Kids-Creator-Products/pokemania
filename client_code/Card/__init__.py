@@ -17,7 +17,7 @@ class Card(CardTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.navigation_link_1.visible=self.navlink
-    if False:
+    if 'name' in properties:
       self.data=properties
     else:
       self.data=anvil.server.startup_data

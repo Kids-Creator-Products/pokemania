@@ -272,6 +272,10 @@ def pokemon(name):
 def cards():
   return anvil.server.FormResponse('Cards')
 
+@anvil.server.route("/search")
+def search():
+  return anvil.server.FormResponse('Cards')
+
 #@anvil.server.route('/card/:n')
 def card(n):
   return anvil.server.AppResponder(data={'name':n}).load_form('Card')

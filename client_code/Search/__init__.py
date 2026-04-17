@@ -31,7 +31,8 @@ class Search(SearchTemplate):
       t+='\n'+k
       v=x[k]
       c=Button(text="View Card "+k)
-      e=lambda **kwargs: anvil.open_form("Card",name=str(v))
+      def e(**kwargs):
+        return anvil.open_form("Card",name=str(v))
       c.add_event_handler('click',e)
       self.content_panel.add_component(c)
     self.rich_text_1.content=t
